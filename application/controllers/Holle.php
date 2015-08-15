@@ -10,14 +10,17 @@ class Holle extends CI_Controller {
 
 	//測試網址:http://localhost/CI/index.php/holle/show
 	function show(){
-		$name = "shrhe";
+		$url = base_url()."holle/show";
+		//測試網站網址
+		$name = "shrhe";				//進站人名
+		$title = $name."歡迎光臨!!";	//網頁抬頭
+		$pre = "拜訪人數"; 				//練習項目標題
 		@$count = file_get_contents('./num.txt') ;
 		$count = $count ? $count : 0 ;
-		$title = $name."歡迎光臨!!";
-
 		$count++;
 		
-		$data = array('name' => $name , 'count' => $count ,'title' => $title );
+		$data = array('url' => $url ,'name' => $name , 'count' => $count ,
+		'title' => $title , 'pre' => $pre );
 
 		$re = fopen('./num.txt', 'w');
 		fwrite($re, $count);
