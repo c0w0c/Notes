@@ -14,19 +14,25 @@
 		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 		<![endif]-->
 		<style>
-			body {
-				padding-top: 50px;
+			blockquote {
+				background:;
+				color:#B2B2B2;
+			 	border-color:#FF8080;
 			}
-			.jumbotron{
-				
+			.jumbotron {
+				margin-top: -30px;
 			}
 		</style>
 	</head>
 	<body>
-		<nav class="navbar navbar-default navbar-fixed-top">
+		<nav class="navbar navbar-default">
 			<div class="container">
 				<div class="navbar-header">
-					<h2 class="navbar-text text-center">Codeigniter練習【<?php echo $pre;?>】</h2>
+					<h1 class="navbar-text text-center">
+						<a style="color:#666666;text-decoration: none;" href="#">
+							<strong><?php echo $header_t ;?></strong>
+						</a>
+					</h1>
 				</div>
 			</div>
 		</nav>
