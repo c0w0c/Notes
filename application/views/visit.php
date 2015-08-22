@@ -8,17 +8,7 @@
 		</H1>
 		<h4>連結網址:<a href="<?php echo $url;?>" target="_blank"><?php echo $url;?></a></h4>
 		<h6>建立日期 : <?php echo $c_date;?></h6>
-		<br>
-		<div class="panel panel-default">
-			<div class="panel-heading text-center"><H3><strong>使用工具</strong></H3></div>
-			<div class="panel-body">
-				<ol style="font-size: 18pt;">
-					<li>PHP 5.5.12</li>
-					<li>Codeigniter 3.0</li>
-					<li>IDE sublime Text2</li>
-				</ol>
-			</div>
-		</div>		
+		<hr>
 		<br>
 		<div class="panel panel-default">
 			<div class="panel-heading text-center"><H3><strong>功能製作摘要</strong></H3></div>
@@ -47,7 +37,7 @@
 			<div class="panel-heading text-center"><H3><strong>本次學習重點</strong></H3></div>
 			<div class="panel-body">
 				<ol style="font-size: 18pt;">
-					<li>讀取檔案內容 : <kbd>$count = file_get_contents('./num.txt');</kbd></li>
+					<li>讀取檔案內容 : <kbd>$count = file_get_contents ('./num.txt');</kbd></li>
 					<li>資料寫入陣列 : <kbd>$data = array('' => , );</kbd></li>
 					<li>已寫入方式開啟檔案 : <kbd>$re = fopen('./num.txt', 'w');</kbd></li>
 					<li>將資料寫入檔案 : <kbd>fwrite($re, $count);</kbd></li>

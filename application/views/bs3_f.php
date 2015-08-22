@@ -1,10 +1,10 @@
-		<div class="bg-success">
- 			<div class="container">
-    			<h4 class="text-center">
-					<strong>Copyright © 2015 by Shrhe</strong>
-				</h4>
-			</div>
-		</div>
+		<footer class="footer">
+      		<div class="container" >
+        		<h4 class="text-muted text-center" style="margin-top: 15px;">
+        			<strong>Copyright © 2015 by Shrhe</strong>
+        		</h4>
+      		</div>
+    	</footer>
 		<!-- jQuery -->
 		<script src="../assets/js/v1.11.3.jquery.min.js"></script>
 		<!-- Bootstrap JavaScript -->

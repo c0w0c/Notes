@@ -22,6 +22,10 @@
 			.jumbotron {
 				margin-top: -30px;
 			}
+			footer{
+				height: 50px;
+  				background-color: #f5f5f5;
+			}
 		</style>
 	</head>
 	<body>
