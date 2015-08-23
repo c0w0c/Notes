@@ -21,7 +21,7 @@ class Holle extends CI_Controller {
 		$data = array(
 			'url' => base_url().'holle/show' , 				//網頁URL
 			'title' => $name.'歡迎光臨!! Codeigniter練習' , //網頁抬頭
-			'header_t' => 'Codeigniter練習',				//練習類別
+			'header_t' => 'Codeigniter 練習',				//練習類別
 			'pre' => '網站訪問人數' ,						//練習題目
 			'c_date' => '2015/08/15' ,						//練習建立日期
 			'name' => $name ,
