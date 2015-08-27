@@ -1,7 +1,7 @@
 <script>
 	function cheak(a,b,c,d){
 		switch(a){
-			case 'ins' :
+			case '2' :
 				if( b == ""){
 					alert("帳號欄位不可為空白!!");
 					return false ;
@@ -13,7 +13,7 @@
 				}
 				break;
 
-			case 'up' && 'del' && 'sel' :
+			case '3':
 				if(d == "" ){
 					alert("ID欄位不可空白!!");
 					return false ;
@@ -36,7 +36,7 @@
 	function ins(){
 		var name = document.getElementById('insname').value;
 		var pass = document.getElementById('inspass').value;
-		var c = cheak('ins',name,pass,'');
+		var c = cheak('2',name,pass,'');
 		if(c !== false){
 			document.location.href = "/CI/User/ins/" + name + "/" + pass ;
 		}
@@ -46,7 +46,7 @@
 		var id = document.getElementById('upid').value;
 		var name = document.getElementById('upname').value;
 		var pass = document.getElementById('uppass').value;
-		var c = cheak('up',name,pass,id);
+		var c = cheak('3',name,pass,id);
 		if(c !== false){
 			document.location.href = "/CI/User/upd/" + id + '/' + name + "/" + pass ;
 		}
@@ -54,7 +54,7 @@
 
 	function del(){
 		var id = document.getElementById('delid').value;
-		var c = cheak('del','no','no',id);
+		var c = cheak('3','no','no',id);
 		if(c !== false){
 			var r = confirm("確定要刪除資料!?資料將無法復原!!");
     		if (r == true) {
@@ -65,7 +65,7 @@
 
 	function sel(){
 		var id = document.getElementById('selid').value;
-		var c = cheak('sel','no','no',id);
+		var c = cheak('3','no','no',id);
 		if(c !== false){
         		document.location.href = "/CI/User/sel/" + id ;
 		}
