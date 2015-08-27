@@ -34,5 +34,12 @@ class User_m extends CI_Model{
 		return $q -> result();
 	}
 
+	//類別四 資料庫欄位全部查詢
+	function user_select_all(){
+		$this->db->select("*");
+		$q = $this->db->get('user');
+		return $q -> result();
+	}
+
 }
 ?>
