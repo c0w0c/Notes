@@ -175,10 +175,21 @@
 				<div class="panel-heading text-center"><H3><strong>功能製作摘要</strong></H3></div>
 				<div class="panel-body">
 					<ol style="font-size: 18pt;">
-						<li>在View中建立表單，傳送圖片只能使用 <kbd>method="post"</kbd> 方式，並且須加上 <kbd>enctype="multipart / form-data"</kbd> 才可傳送圖片檔案。
+						<li>於MySQL資料庫中建立會員資料表。
 							<blockquote class="danger">
-								<pre>&lt;form action="/CI/Photo_upload/upload" method="post" enctype="multipart/form-data"&gt;
-								&lt;/form&gt;</pre>
+								<P>資料表欄位分別為:</P>
+								<p>　1.ID</p>
+								<p>　2.NAME</p>
+								<p>　3.password</p>
+							</blockquote>
+						</li>
+						<li>設定完資料表後，在controllers中建立名為User.php，並分別建立以下五個class。
+							<blockquote class="danger">
+								<P>1.index  【要求models搜尋的全部資料並讓View顯示】</P>
+								<p>2.insert 【要求models建立使用者資料】</p>
+								<p>3.updata 【要求models修改使用者資料】</p>
+								<p>4.select 【要求models搜尋指定ID資料並讓View顯示】</p>
+								<p>4.delete 【要求models刪除指定ID資料】</p>
 							</blockquote>
 						</li>
 					</ol>
