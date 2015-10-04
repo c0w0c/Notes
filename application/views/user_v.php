@@ -38,7 +38,7 @@
 		var pass = document.getElementById('inspass').value;
 		var c = cheak('2',name,pass,'');
 		if(c !== false){
-			document.location.href = "/CI/User/ins/" + name + "/" + pass ;
+			document.location.href = "/Notes/C20150824003/ins/" + name + "/" + pass ;
 		}
 	}
 
@@ -48,7 +48,7 @@
 		var pass = document.getElementById('uppass').value;
 		var c = cheak('3',name,pass,id);
 		if(c !== false){
-			document.location.href = "/CI/User/upd/" + id + '/' + name + "/" + pass ;
+			document.location.href = "/Notes/C20150824003/upd/" + id + '/' + name + "/" + pass ;
 		}
 	}
 
@@ -58,7 +58,7 @@
 		if(c !== false){
 			var r = confirm("確定要刪除資料!?資料將無法復原!!");
     		if (r == true) {
-        		document.location.href = "/CI/User/del/" + id ;
+        		document.location.href = "/Notes/C20150824003/del/" + id ;
     		}
 		}
 	}
@@ -67,7 +67,7 @@
 		var id = document.getElementById('selid').value;
 		var c = cheak('3','no','no',id);
 		if(c !== false){
-        		document.location.href = "/CI/User/sel/" + id ;
+        		document.location.href = "/Notes/C20150824003/sel/" + id ;
 		}
 	}
 </script>

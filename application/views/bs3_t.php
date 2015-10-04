@@ -26,9 +26,18 @@
 				height: 50px;
   				background-color: #f5f5f5;
 			}
+			.homebtn{
+  			position: fixed;
+  			bottom: 10%;
+  			right: 0;
+  			width: 70px;
+  			height: 0px;
+  			text-align: center;
+			}
 		</style>
 	</head>
 	<body>
+		<div class="homebtn"><a href="<?php echo substr_replace(base_url(),'',-1) ;?>">回首頁</a></div>
 		<nav class="navbar navbar-default">
 			<div class="container">
 				<div class="navbar-header">
@@ -40,3 +49,4 @@
 				</div>
 			</div>
 		</nav>
+		

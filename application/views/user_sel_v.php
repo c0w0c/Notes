@@ -23,7 +23,7 @@
 					?>
 				</tbody>
 			</table>
-			<BUTTON onclick="document.location.href = '/CI/User#datetable';">返回主頁</BUTTON>
+			<BUTTON onclick="document.location.href = '/Notes/C20150824003#datetable';">返回主頁</BUTTON>
 		</div>
 		<h4>連結網址:<a href="<?php echo $url;?>" target="_blank"><?php echo $url;?></a></h4>
 		<h6>建立日期 : <?php echo $c_date;?></h6>

@@ -10,7 +10,7 @@
 		</div>
 		<div class="alert alert-danger">
 		<p>範例:</p><br>	
-		<form action="/CI/Photo_upload/upload" method="post" enctype="multipart/form-data">
+		<form action="/Notes/C20150822002/upload" method="post" enctype="multipart/form-data">
 		<input type="file" name="upfile"><br>
 		<input type="submit" class="btn btn-default" name="sub" value="上傳">
 		</form><br>	
