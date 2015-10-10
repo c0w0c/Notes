@@ -9,20 +9,11 @@ class Page_m extends CI_Model{
 	}
 
 	//類別一 指定ID搜尋筆記清單資料
-	function note_list_select($note_id){
+	function note_data_select($note_id){
 		$this->db->where("note_id",$note_id);
 		$this->db->select("*");
-		$q = $this->db->get('note_list');
+		$q = $this->db->get('note_data');
 		return $q -> result();
 	}
-
-	//類別二 指定ID搜尋筆記內容資料
-	function note_contents_select($note_id){
-		$this->db->where("note_id",$note_id);
-		$this->db->select("*");
-		$q = $this->db->get('note_contents');
-		return $q -> result();
-	}
-
 }
 ?>
