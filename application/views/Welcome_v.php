@@ -43,7 +43,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="">ShrHe 筆記</a>
+                <a class="navbar-brand" href="<?php echo base_url(); ?>">ShrHe 筆記</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -105,28 +105,44 @@
                     //$id = $note_data[$i]->id;
                     //$da = str_replace ("-","",$note_data[$i]->createdate);
                     //$note_id = $da.$id;
-                    switch ($note_data[$i]->note_class) { //定義Pennal 顏色
+                    
+                    //定義Pennal 顏色
+                    switch ($note_data[$i]->note_class) { 
                         case 'Codeigniter':
                             $class_color = 'primary';
                             break;
                         case 'PHP':
                             $class_color = 'primary';
                             break;
-                        case 'Sublimetext':
+                        case 'SublimeText':
                             $class_color = 'warning';
                             break;
                         default:
                             $class_color = 'default';
                             break; 
                     }
-                    echo '<div class="col-md-6"><div class="panel panel-'.$class_color.'">';
+
+                    //判斷是否為Codeigniter的連結如果不是就加頁數
+                    if ($note_data[$i]->note_class != 'Codeigniter') {
+                        $url_add = 'Page/Number/';
+                    }else{
+                        $url_add = '';
+                    }
+
+                    //抓取title需要使用的字元數
+                    $ti_num = strpos($note_data[$i]->note_title,"|");
+
+                    //抓取概要內容
+                    $cont = strstr($note_data[$i]->note_contents,"|");
+
+                    echo '<div class="col-md-6 panel-box"><div class="panel panel-'.$class_color.'">';
                     echo '<div class="panel-heading"><h2><i class="fa fa-thumb-tack"> '.$note_data[$i]->note_class.'</i></h2></div>';
                     echo '<div class="panel-body"><div class="panel_img" style="background-image:url(assets/img/index/'.$note_data[$i]->note_id.'.png);"></div>';
-                    echo '<h1 class="con-title">《'.$note_data[$i]->note_title.'》</h1>';    
-                    echo '<h3 class="text-justify text-muted ">'.mb_substr( $note_data[$i]->note_contents,0,54,"utf-8").'...</h3>';
+                    echo '<h1 class="con-title">《'.substr($note_data[$i]->note_title,0,$ti_num).'》</h1>';    
+                    echo '<h4 class="text-justify text-muted ">'.mb_substr($cont,1,50,"utf-8").'...</h3>';
                     echo '<div class="info col-md-9"><h4><i class="fa fa-calendar"> : '.$note_data[$i]->createdate.'</i></h4></div>';
                     echo '<div class="info col-md-3"><h4><i class="fa fa-pencil-square-o"> : Shrhe</i></h4></div>';
-                    echo '<a href="'.base_url().$note_data[$i]->note_id.'" class=" col-md-12 btn btn-'.$class_color.' btn-lg btn-block">了解更多..</a>';
+                    echo '<a href="'.base_url().$url_add.$note_data[$i]->note_id.'" class=" col-md-12 btn btn-'.$class_color.' btn-lg btn-block">了解更多..</a>';
                     echo '</div></div></div>';
                 }
             ?>

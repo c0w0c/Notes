@@ -37,7 +37,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="">ShrHe 筆記</a>
+                <a class="navbar-brand" href="<?php echo base_url(); ?>">ShrHe 筆記</a>
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
@@ -88,15 +88,22 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h2 class="page-header text-center">【<?php echo $note_data[0]->note_title; ?>】</h2>
+                <div class="page-header text-center">【<?php echo str_replace("|","",$note_data[0]->note_title); ?>】</div>
             </div>
         </div>
         <div class="row">
             <div class="col-md-12">   
                 <p class="ti"><i class="fa fa-clock-o fa-2x"> <?php echo $note_data[0]->createdate; ?></i></p>
                 <p class="cl"><i class="fa fa-tags fa-2x"> <?php echo $note_data[0]->note_class; ?></i></p>
-                <hr><!--文章內容-->                
-                <?php echo $note_data[0]->note_contents; ?>                
+                <hr><!--文章內容-->
+                <div class="con">             
+                <?php
+                    //內容字串處理 
+                    $cont = str_replace("|","",$note_data[0]->note_contents);
+                    $cont = str_replace("BASEURL",base_url(),$cont); 
+                    echo $cont;
+                ?>
+                </div>                
                 <hr><!--文章內容-->
                 <!-- Comments Form -->
                 <div class="well">
