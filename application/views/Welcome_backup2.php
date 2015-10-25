@@ -120,30 +120,42 @@
                         //$id = $note_data[$i]->id;
                         //$da = str_replace ("-","",$note_data[$i]->createdate);
                         //$note_id = $da.$id;
-                        if( $i % 2 == 0){
+                        
+                        //判斷是否為Codeigniter的連結如果不是就加頁數
+                        if ($note_data[$i]->note_class != 'Codeigniter') {
+                            $url_add = 'Page/Number/';
+                        }else{
+                            $url_add = '';
+                        }
+
+                        //抓取title需要使用的字元數
+                        $ti_num = strpos($note_data[$i]->note_title,"|");
+
+                        //抓取概要內容
+                        $cont = strstr($note_data[$i]->note_contents,"|");                        
+                        
                             //左文右圖
-                            echo '';
-                            echo '<div class="row r1"><div class="col col-md-5 col-md-push-7"><center>';
-                            echo '<img class="img-responsive" src="'.base_url().'assets/img/index/'.$note_data[$i]->note_id.'.png" data-src="holder.js/500x400/auto" alt="image"></center></div><div class="col-md-7 col-md-pull-5">';
-                            echo '<h1 class="text-center"><strong>《'.$note_data[$i]->note_title.'》</strong></h1>';
-                            echo '<h3 class="text-justify text-muted">'.mb_substr( $note_data[$i]->note_contents,0,54,"utf-8").'...</h3><br><div class="row">';
-                            echo '<div class="col-md-7"><h4>類別:'.$note_data[$i]->note_class.'</h4></div>';
-                            echo '<div class="col-md-5"><h4>建立日期:'.$note_data[$i]->createdate.'</h4></div>';
-                            echo '<div class="col-md-12"><a href= '.base_url().$note_data[$i]->note_id.'><div class="btn01"><h3 class="btntext text-center">詳細閱讀</h3></div></a></div></br>';
-                            echo '</div></div></div><hr>';
+                            //echo '';
+                            //echo '<div class="row r1"><div class="col col-md-5 col-md-push-7"><center>';
+                            //echo '<img class="img-responsive" src="'.base_url().'assets/img/index/'.$note_data[$i]->note_id.'.png" style="height:300px;" data-src="holder.js/500x400/auto" alt="image"></center></div><div class="col-md-7 col-md-pull-5">';
+                            //echo '<h1 class="text-center"><strong>《'.substr($note_data[$i]->note_title,0,$ti_num).'》</strong></h1>';
+                            //echo '<h3 class="text-justify text-muted">'.mb_substr($cont,1,45,"utf-8").'...</h3><br><div class="row">';
+                            //echo '<div class="col-md-7"><h4>類別:'.$note_data[$i]->note_class.'</h4></div>';
+                            //echo '<div class="col-md-5"><h4>建立日期:'.$note_data[$i]->createdate.'</h4></div>';
+                            //echo '<div class="col-md-12"><a href= '.base_url().$note_data[$i]->note_id.'><div class="btn01"><h3 class="btntext text-center">詳細閱讀</h3></div></a></div></br>';
+                            //echo '</div></div></div><hr>';
                             //左文右圖end
-                        }elseif ($i % 2 == 1) {
+
                             //左圖右文
                             echo '<div class="row r1"><div class="col-md-5"><center>';
-                            echo '<img class="img-responsive" src="'.base_url().'assets/img/index/'.$note_data[$i]->note_id.'.png" data-src="holder.js/500x400/auto" alt="image"></center></div><div class="col-md-7">';
-                            echo '<h1 class="text-center"><strong>《'.$note_data[$i]->note_title.'》</strong></h1>';
-                            echo '<h3 class="text-justify text-muted">'.mb_substr( $note_data[$i]->note_contents,0,54,"utf-8").'...</h3><br><div class="row">';
+                            echo '<img class="img-responsive" src="'.base_url().'assets/img/index/'.$note_data[$i]->note_id.'.png" style="height:300px;" data-src="holder.js/500x400/auto" alt="image"></center></div><div class="col-md-7">';
+                            echo '<h1 class="text-center"><strong>《'.substr($note_data[$i]->note_title,0,$ti_num).'》</strong></h1>';
+                            echo '<h3 class="text-justify text-muted">'.mb_substr($cont,1,45,"utf-8").'...</h3><br><div class="row">';
                             echo '<div class="col-md-7"><h4>類別:'.$note_data[$i]->note_class.'</h4></div>';
                             echo '<div class="col-md-5"><h4>建立日期:'.$note_data[$i]->createdate.'</h4></div>';
-                            echo '<div class="col-md-12"><a href= '.base_url().$note_data[$i]->note_id.'><div class="btn01"><h3 class="btntext text-center">詳細閱讀</h3></div></a></div></br>';
+                            echo '<div class="col-md-12"><a href= '.base_url().$url_add.$note_data[$i]->note_id.'><div class="btn01"><h3 class="btntext text-center">詳細閱讀</h3></div></a></div></br>';
                             echo '</div></div></div><hr>';
                             //左圖右文end
-                        }
                     }
                 ?>
             </div>
