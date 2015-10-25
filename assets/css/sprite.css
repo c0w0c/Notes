@@ -1,0 +1,58 @@
+.sprite {
+    background-image: url(../img/nav/sprit.png);
+    background-repeat: no-repeat;
+    display: block;
+    font-style: normal;
+    font-family:serif;
+    font-weight: 500;
+    line-height:10pt;
+    font-size: 12pt;
+}
+
+.sprite-bootstrap {
+    width: 16px;
+    height: 16px;
+    background-position: -10px -10px;
+}
+
+.sprite-codeigniter {
+    width: 16px;
+    height: 19px;
+    background-position: -10px -48px;
+}
+
+.sprite-css3 {
+    width: 16px;
+    height: 16px;
+    background-position: -10px -83px;
+}
+
+.sprite-html5 {
+    width: 16px;
+    height: 16px;
+    background-position: -10px -118px;
+}
+
+.sprite-js {
+    width: 16px;
+    height: 18px;
+    background-position: -10px -153px;
+}
+
+.sprite-php {
+    width: 16px;
+    height: 15px;
+    background-position: -10px -188px;
+}
+
+.sprite-python {
+    width: 16px;
+    height: 16px;
+    background-position: -10px -219px;
+}
+
+.sprite-sublimetext {
+    width: 16px;
+    height: 16px;
+    background-position: -10px -254px;
+}
