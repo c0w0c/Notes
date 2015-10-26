@@ -111,6 +111,9 @@
                         case 'SublimeText':
                             $class_color = 'warning';
                             break;
+                        case 'CSS3':
+                            $class_color = 'info';
+                            break;
                         default:
                             $class_color = 'default';
                             break; 
@@ -136,7 +139,7 @@
                     echo '<h4 class="text-justify text-muted ">'.mb_substr($cont,1,50,"utf-8").'...</h3>';
                     echo '<div class="info col-md-9"><h4><i class="fa fa-calendar"> : '.$note_data[$i]->createdate.'</i></h4></div>';
                     echo '<div class="info col-md-3"><h4><i class="fa fa-pencil-square-o"> : Shrhe</i></h4></div>';
-                    echo '<a href="'.base_url().$url_add.$note_data[$i]->note_id.'" class=" col-md-12 btn btn-'.$class_color.' btn-lg btn-block">了解更多..</a>';
+                    echo '<a href="'.base_url().$url_add.$note_data[$i]->note_id.'" class=" col-md-12 btn btn-'.$class_color.' btn-lg btn-block">查看筆記..</a>';
                     echo '</div></div></div>';
                 }}
             ?>
