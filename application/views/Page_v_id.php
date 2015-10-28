@@ -7,7 +7,7 @@
         <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
         <meta name="description" content="">
         <meta name="author" content="">
-        <link rel="icon" href="./assets/img/nav/shrhe.ico">
+        <link rel="icon" href="<?php echo base_url().'assets/img/nav/shrhe.ico';?>">
         <title>ShrHe 學習筆記</title>
         <!-- Bootstrap core CSS -->
         <link href="<?php echo base_url().'assets/css/bootstrap/bootstrap.min.css';?>" rel="stylesheet">
@@ -99,7 +99,7 @@
                 <?php
                     //內容字串處理 
                     $cont = str_replace("|","",$note_data[0]->note_contents);
-                    $cont = str_replace("BASEURL",base_url(),$cont); 
+                    $cont = str_replace("../../",base_url(),$cont); 
                     echo $cont;
                 ?>
                 </div>                

@@ -23,13 +23,6 @@ body {
     /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
 }
 
-blockquote {
-    color: #888888;  
-    background-color:#F2F2F2;
-    border-color:#2E8AE6;
-    box-shadow: 0px 5px 5px rgba(20%, 20%, 40%, 0.5);
-    /*border-color: #FF8080;*/
-}
 
 /*滾動HEADER加陰影語法*/
 
@@ -47,6 +40,15 @@ blockquote {
     font-size: 36pt;
 }
 
+.imgbox {
+    background-color: #ffffff;
+    padding: 8px;
+    border: 1px #B8B8B8 solid;
+    border-radius: 5px;
+    box-shadow: 0px 5px 5px rgba(20%, 20%, 40%, 0.5);
+    margin-bottom: 50px;
+}
+
 
 /*con字體設定*/
 
@@ -55,9 +57,15 @@ blockquote {
     font-size: 24pt;
 }
 
-.step{
-    margin-top: 40px;
+span {
+    font-size: small;
+    color: #d9534f;
 }
+
+.full {
+    width: 100%;
+}
+
 
 /* 地板高度 */
 
@@ -149,6 +157,14 @@ footer {
     .con {
         font-family: myfont;
         font-size: 18pt;
+    }
+    .imgbox {
+        background-color: #ffffff;
+        padding: 2px;
+        border: 1px #B8B8B8 solid;
+        border-radius: 3px;
+        box-shadow: 0px 5px 5px rgba(20%, 20%, 40%, 0.5);
+        margin-bottom: 50px;
     }
     /*地板文字*/
     footer > h4 {

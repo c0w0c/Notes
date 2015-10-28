@@ -97,29 +97,30 @@
                 <p class="cl"><i class="fa fa-tags fa-2x"> 類別</i></p>
                 <hr>
                 <!--文章內容-->
-                <div class="con" style="margin:15px 0px 15px 0px;">|開始要製作NavBar按鈕時，想說按鈕只有純文字好像少點甚麼，如果加上小icon因該可以讓使用者更直覺點選。</div>
-                <img src="BASEURLassets/img/index/C20151026005.png" class="img-responsive img-thumbnail center-block" alt="Image">
-                <div class="con" style="margin:15px 0px 15px 0px;">原本想使用最基本的 <code>&lt;Img&gt;</code> 來做就好，後來想起有次在抓google得Icon時發現，它所使用的圖示是全部放在同一張圖檔上面(驚)。</div>
-                <img src="https://www.google.com.tw/images/nav_logo231.png" class="img-responsive img-thumbnail center-block" alt="googleicon">
+                <div class="con" style="margin:15px 0px 15px 0px;">|開始要製作NavBar按鈕時，想說按鈕只有純文字好像少點甚麼，如果加上小icon<span>(圖一)</span>因該可以讓使用者更直覺點選。</div>
+                <div class="row">
+                <div class="col-md-6 col-sm-6" style=""><div style="background-image: url(../../assets/img/index/C20151026005.png);width:100%;height:194px;background-repeat: no-repeat;background-position: center;"></div><h4 class="text-danger text-center">(圖一)</h4></div>
+                <div class="col-md-6 col-sm-6"><div style="background-image: url(https://www.google.com.tw/images/nav_logo231.png);width:100%;height:194px;background-repeat: no-repeat;background-position: top center;"></div><h4 class="text-danger text-center">(圖二)</h4></div>
+                </div>
+                <div class="con" style="margin:15px 0px 15px 0px;">原本想使用最基本的 <code>&lt;Img&gt;</code> 來做就好，後來想起有次在抓google得Icon時發現，它所使用的圖示<span>(圖二)</span>是全部放在同一張圖檔上面(驚)。</div>
                 <div class="con" style="margin:15px 0px 15px 0px;">這太神奇了，全部的圖示都在一張圖片上那它是怎麼讓每個圖示，各別獨立顯示出來的呢?當時心裡產生了這個問號，於是在谷哥大神的協助下找到了"CSS Sprite"。</div>
                 <div class="con" style="margin:15px 0px 15px 0px;">這項技術有啥好處呢?根據<a href="http://blog.miniasp.com/post/2008/12/13/CSS-Spriting-without-using-background-image.aspx" target="_new">IT神人will保哥</a>blog文章內容表示，在圖片大小條件相同的情況下，如果整頁的背景圖原本有30張就會有30個HTTP Request，但全部合在一張圖片後就只需要一個HTTP Request而已，還可以透過HTTP Cache技巧將圖片快取在瀏覽器中。所以使用CSS prite可以加速網頁載入與顯示的速度提昇網站效能。</div> 
                 <div class="con" style="margin:15px 0px 15px 0px;">閱讀文章了解後，基本上是使用CSS的background-image跟background-position來完成這項技術，簡單來說就是在使用同一張圖片，但是使用不同的定位點來抓取片段的圖像的方法，感覺實作起來非常耗時，但還好已經有網站提供編輯器，只要準備好圖片上傳，就會自動合併圖片並將語法及定位點幫我們寫好，可以直接拿來使用。</div>
                 <div class="con" style="margin:15px 0px 15px 0px;">讓我們開始實際操作吧:<br>編輯器網站網址：<a href="http://spritegen.website-performance.org/" target="_new">http://spritegen.website-performance.org/</a></div>
                 
 
-                <h2  class="step">1.開啟CSS Sprite網站編輯器</h2><blockquote><img src="BASEURLassets/img/contents/C20151026005-1.png" class="img-responsive img-thumbnail center-block" alt="Image"><h4 class="text-center">▲點選連結後網站的首頁</h4></blockquote>
+                <h2>1.開啟CSS Sprite網站編輯器</h2><div class="imgbox"><img src="../../assets/img/contents/C20151026005-1.png" class="img-responsive full" alt="Image"><h4 class="text-center">▲點選連結後網站的首頁</h4></div>
 
-                <h2 class="step">2.點選Clear清除預設的圖示</h2><blockquote><img src="BASEURLassets/img/contents/C20151026005-2.png" class="img-responsive img-thumbnail center-block" alt="Image"><h4 class="text-center">▲清除前</h4><img src="BASEURLassets/img/contents/C20151026005-3.png" class="img-responsive img-thumbnail center-block" alt="Image"><h4 class="text-center">▲清除後</h4></blockquote>
+                <h2>2.點選Clear清除預設的圖示</h2><div class="imgbox"><img src="../../assets/img/contents/C20151026005-2.png" class="img-responsive full" alt="Image"><h4 class="text-center">▲清除前</h4><hr><img src="../../assets/img/contents/C20151026005-3.png" class="img-responsive full" alt="Image"><h4 class="text-center">▲清除後</h4></div>
 
-                <h2 class="step">3.點選Open加入要合併的圖示。</h2><blockquote><img src="BASEURLassets/img/contents/C20151026005-4.png" class="img-responsive img-thumbnail center-block" alt="Image"></blockquote>
+                <h2>3.點選Open加入要合併的圖示。</h2><div class="imgbox"><img src="../../assets/img/contents/C20151026005-4.png" class="img-responsive full" alt="Image"></div>
                 
-                <h2 class="step">4.上傳完畢後可以看見圖示在上面，並點選Settings開始進行相關設定</h2><blockquote><img src="BASEURLassets/img/contents/C20151026005-5.png" class="img-responsive img-thumbnail center-block" alt="Image"></blockquote>
+                <h2>4.上傳完畢後可以看見圖示在上面，並點選Settings開始進行相關設定</h2><div class="imgbox"><img src="../../assets/img/contents/C20151026005-5.png" class="img-responsive full" alt="Image"></div>
 
-                <h2 class="step">5.點選設定後可以看見右方出現了設定的視窗，依照你要的格式設定。
-設定完畢後點選Save保存設置。</h2><blockquote><img src="BASEURLassets/img/contents/C20151026005-6.png" class="img-responsive img-thumbnail center-block" alt="Image"><h4 class="text-center">▲其中Style prefix是class要設的名稱，請設定自己要用的名稱。</h4></blockquote>
+                <h2>5.點選設定後可以看見右方出現了設定的視窗，依照你要的格式設定。<br>設定完畢後點選Save保存設置。</h2><div class="imgbox"><img src="../../assets/img/contents/C20151026005-6.png" class="img-responsive full" alt="Image"><h4 class="text-center">▲其中Style prefix是class要設的名稱，請設定自己要用的名稱。</h4></div>
                 
-                <h2 class="step">6.保存設置後點選Downloads，可以查看合併完成的圖片、程式碼。</h2><blockquote><img src="BASEURLassets/img/contents/C20151026005-7.png" class="img-responsive img-thumbnail center-block" alt="Image"><br><img src="BASEURLassets/img/contents/C20151026005-8.png" class="img-responsive img-thumbnail center-block" alt="Image"><h4 class="text-center">▲PNG圖片</h4><br><img src="BASEURLassets/img/contents/C20151026005-9.png" class="img-responsive img-thumbnail center-block" alt="Image"><h4 class="text-center">▲CSS的程式碼</h4><br><img src="BASEURLassets/img/contents/C20151026005-10.png" class="img-responsive img-thumbnail center-block" alt="Image"><h4 class="text-center">▲HTML要使用的標籤語法</h4></blockquote>
-                <h2 class="step">7.在程式碼裡面加入標籤語法，完成。</h2><blockquote><img src="BASEURLassets/img/contents/C20151026005-11.png" class="img-responsive img-thumbnail center-block" alt="Image"><h4 class="text-center">▲可以開啟網頁預覽結果囉!!</h4></blockquote>
+                <h2>6.保存設置後點選Downloads，可以查看合併完成的圖片、程式碼。</h2><div class="imgbox"><img src="../../assets/img/contents/C20151026005-7.png" class="img-responsive full" alt="Image"><hr><img src="../../assets/img/contents/C20151026005-8.png" class="img-responsive full" alt="Image"><h4 class="text-center">▲PNG圖片</h4><hr><img src="../../assets/img/contents/C20151026005-9.png" class="img-responsive full" alt="Image"><h4 class="text-center">▲CSS的程式碼</h4><hr><img src="../../assets/img/contents/C20151026005-10.png" class="img-responsive full" alt="Image"><h4 class="text-center">▲HTML要使用的標籤語法</h4></div>
+                <h2>7.在程式碼裡面加入標籤語法，完成。</h2><div class="imgbox"><img src="../../assets/img/contents/C20151026005-11.png" class="img-responsive full" alt="Image"><h4 class="text-center">▲可以開啟網頁預覽結果囉!!</h4></div>
                 <div class="con" style="margin:30px 0px 15px 0px;">根據實作結果，有些的定位會稍微跑掉，所以需要在CSS的background-position裡稍做調整，基本上沒甚麼大問題，但這個方法仍然有些瀏覽器不支援(詳細情形請詳閱<a href="http://blog.miniasp.com/post/2008/12/13/CSS-Spriting-without-using-background-image.aspx" target="_new">Will保哥的blog</a>)，而且這方法雖然可以提昇網站的效能，但是在製作跟後續維護上會比原先直接使用ImgTag方法更耗時間，所以各有利弊，在此留下筆記提醒自己。<br><br>
                 CSS Sprite相關:
                 <a href="http://www.minwt.com/webdesign-dev/css/11111.html">梅問題教學網</a>　 
