@@ -3,7 +3,7 @@
 <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
         <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
         <meta name="description" content="">
         <meta name="author" content="">
@@ -50,24 +50,24 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Front End <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="<?php echo base_url(); ?>"><i class="sprite sprite-html5">　 HTML5</i></a></li>
-                            <li><a href="#"><i class="sprite sprite-css3">　 CSS3</i></a></li>
-                            <li><a href="#"><i class="sprite sprite-js">　 Javascript</i></a></li>
-                            <li><a href="#"><i class="sprite sprite-bootstrap">　 Bootstrap</i></a></li>
+                            <li><a href="<?php echo base_url().'Page/Tag/HTML5'; ?>"><i class="sprite sprite-html5">　 HTML5</i></a></li>
+                            <li><a href="<?php echo base_url().'Page/Tag/CSS3'; ?>"><i class="sprite sprite-css3">　 CSS3</i></a></li>
+                            <li><a href="<?php echo base_url().'Page/Tag/Javascript'; ?>"><i class="sprite sprite-js">　 Javascript</i></a></li>
+                            <li><a href="<?php echo base_url().'Page/Tag/Bootstrap'; ?>"><i class="sprite sprite-bootstrap">　 Bootstrap</i></a></li>
                         </ul>
                     </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Back End <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#"><i class="sprite sprite-php">　 PHP</i></a></li>
-                            <li><a href="#"><i class="sprite sprite-codeigniter">　 Codeigniter</i></a></li>
+                            <li><a href="<?php echo base_url().'Page/Tag/PHP'; ?>"><i class="sprite sprite-php">　 PHP</i></a></li>
+                            <li><a href="<?php echo base_url().'Page/Tag/Codeigniter'; ?>"><i class="sprite sprite-codeigniter">　 Codeigniter</i></a></li>
                         </ul>
                     </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Other <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#"><i class="sprite sprite-python">　 Python</i></a></li>
-                            <li><a href="#"><i class="sprite sprite-sublimetext">　 Sublimetext</i></a></li>
+                            <li><a href="<?php echo base_url().'Page/Tag/Python'; ?>"><i class="sprite sprite-python">　 Python</i></a></li>
+                            <li><a href="<?php echo base_url().'Page/Tag/SublimeText'; ?>"><i class="sprite sprite-sublimetext">　 SublimeText</i></a></li>
                         </ul>
                     </li>
                     <li>
