@@ -11,11 +11,7 @@
         <link rel="icon" href="">
         <title>ShrHe 學習筆記</title>
         <!-- Bootstrap core CSS -->
-        <link href="<?php echo base_url().'assets/css/bootstrap/bootstrap.min.css';?>" rel="stylesheet">
-        <!-- Custom styles for this template -->
-        <link href="<?php echo base_url().'assets/css/bootstrap/starter-template.css';?>" rel="stylesheet">
-        <!-- Custom styles for this template -->
-        <link href="<?php echo base_url().'assets/css/bootstrap/carousel.css';?>" rel="stylesheet">
+        <link href="<?php echo base_url().'assets/css/bootstrap.min.css';?>" rel="stylesheet">
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -75,7 +71,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="">ShrHe 筆記</a>
+                    <a class="navbar-brand" href="<?=base_url(); ?>">ShrHe 筆記</a>
                 </div>
                 <div id="navbar" class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
@@ -112,6 +108,7 @@
             </div>
         </nav>
         <!-- jumbotron-->
+        <br>
         <div class="jumbotron">
             <div class="container">
                 <?php 
