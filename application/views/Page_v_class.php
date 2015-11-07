@@ -17,16 +17,16 @@
         <div class="row">
             <?php
             if (count($note_data) == 0 ) {
-                    echo '<div class="alert alert-warning" role="alert"><h1 class="text-center"><strong>Sorry! 目前尚未有相關文章喔!</strong></h1></div>';
+                    echo '<div class="container"><div class="alert alert-warning" role="alert"><h1 class="text-center"><strong>Sorry! 目前尚未有相關文章喔!</strong></h1></div></div>';
             }else{
                 for($i = (count($note_data)-1) ; $i >= 0 ; $i--){
                     //抓取文章代碼
                     //$id = $note_data[$i]->id;
                     //$da = str_replace ("-","",$note_data[$i]->createdate);
                     //$note_id = $da.$id;
-                    
+
                     //定義Pennal 顏色
-                    switch ($note_data[$i]->note_class) { 
+                    switch ($note_data[$i]->note_class) {
                         case 'Codeigniter':
                             $class_color = 'primary';
                             break;
@@ -41,7 +41,7 @@
                             break;
                         default:
                             $class_color = 'default';
-                            break; 
+                            break;
                     }
 
                     //判斷是否為Codeigniter的連結如果不是就加頁數
@@ -60,7 +60,7 @@
                     echo '<div class="col-md-6 panel-box"><div class="panel panel-'.$class_color.'">';
                     echo '<div class="panel-heading"><h2><i class="fa fa-thumb-tack"> '.$note_data[$i]->note_class.'</i></h2></div>';
                     echo '<div class="panel-body"><div class="panel_img" style="background-image:url(assets/img/index/'.$note_data[$i]->note_id.'.png);"></div>';
-                    echo '<h1 class="con-title">《'.substr($note_data[$i]->note_title,0,$ti_num).'》</h1>';    
+                    echo '<h1 class="con-title">《'.substr($note_data[$i]->note_title,0,$ti_num).'》</h1>';
                     echo '<h4 class="text-justify text-muted ">'.mb_substr($cont,1,50,"utf-8").'...</h3>';
                     echo '<div class="info col-md-9"><h4><i class="fa fa-calendar"> : '.$note_data[$i]->createdate.'</i></h4></div>';
                     echo '<div class="info col-md-3"><h4><i class="fa fa-pencil-square-o"> : Shrhe</i></h4></div>';
@@ -68,7 +68,7 @@
                     echo '</div></div></div>';
                 }}
             ?>
-        <!-- /.row -->   
+        <!-- /.row -->
         </div>
         <hr>
         <!-- Footer -->

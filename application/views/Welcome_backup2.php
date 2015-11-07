@@ -50,7 +50,7 @@
             height: 40px;
             background: #FBFBFB;
             border-radius:5px;
-            box-shadow:1px 1px 8px 3px rgba(20%,20%,40%,0.5); 
+            box-shadow:1px 1px 8px 3px rgba(20%,20%,40%,0.5);
         }
         .btn01:hover{
             box-shadow:4px 4px 20px 10px rgba(20%,20%,40%,0.5);
@@ -111,13 +111,13 @@
         <br>
         <div class="jumbotron">
             <div class="container">
-                <?php 
+                <?php
                     for($i = (count($note_data)-1) ; $i >= 0 ; $i--){
                         //抓取文章代碼
                         //$id = $note_data[$i]->id;
                         //$da = str_replace ("-","",$note_data[$i]->createdate);
                         //$note_id = $da.$id;
-                        
+
                         //判斷是否為Codeigniter的連結如果不是就加頁數
                         if ($note_data[$i]->note_class != 'Codeigniter') {
                             $url_add = 'Page/Number/';
@@ -129,8 +129,8 @@
                         $ti_num = strpos($note_data[$i]->note_title,"|");
 
                         //抓取概要內容
-                        $cont = strstr($note_data[$i]->note_contents,"|");                        
-                        
+                        $cont = strstr($note_data[$i]->note_contents,"|");
+
                             //左文右圖
                             //echo '';
                             //echo '<div class="row r1"><div class="col col-md-5 col-md-push-7"><center>';

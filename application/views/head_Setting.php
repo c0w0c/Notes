@@ -11,12 +11,14 @@
 <link href="assets/fonts/font-awesome/css/font-awesome.min.css" rel="stylesheet">
 <!-- sprite css -->
 <link href="assets/css/sprite.css" rel="stylesheet" type="text/css">
+<!-- navbar css -->
+<link href="assets/css/navbar.css" rel="stylesheet" type="text/css">
 <!-- jQuery -->
 <script src="assets/js/v1.11.3.jquery.min.js"></script>
 <!-- Bootstrap Core JavaScript -->
 <script src="assets/js/bootstrap.min.js"></script>
 <!--滾動HEADER加陰影語法-->
-<script src="assets/js/nav_scroll_shadow.js"></script>
+<script src="assets/js/navbar.js"></script>
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 <!--[if lt IE 9]>

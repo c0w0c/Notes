@@ -86,7 +86,7 @@
                 <div class="row">
                     <div class="col-md-5 col-md-push-7">
                         <img class="img-responsive" src="<?php echo base_url().'/assets/img/index/C20150824003.png';?>" data-src="holder.js/500x400/auto" alt="image">
-                    </div>                    
+                    </div>
                     <div class="col-md-7 col-md-pull-5">
                             <H1 class="text-center"><strong>《簡易會員系統》</strong></H1>
                             <h2 class="text-justify text-muted">使用CI搭配MYSQL製作簡易會員系統，可新增、更新、刪除、搜尋的系統.</h2>

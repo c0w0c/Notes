@@ -1,0 +1,75 @@
+/*滾動HEADER加陰影語法*/
+
+.navbar.shadow {
+    box-shadow: 0px 5px 5px rgba(20%, 20%, 40%, 0.5);
+    transition: box-shadow 0.5s;
+}
+
+
+/* 透明化 */
+
+.navbar.Transparent {
+    background: rgba(0, 0, 0, 0.7);
+    border-bottom-color: rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.5s;
+}
+
+
+/* 響應式網頁 */
+
+@media screen and (min-width: 992px) {
+    /*桌面*/
+    /*尋覽列表單*/
+    .navbar-form {
+        width: 170px;
+    }
+    .navbar-form> .form-group {
+        width: 70%;
+    }
+    .navbar-form > .form-group > .form-control {
+        width: 100%;
+    }
+    .navbar-form> .btn {
+        margin-left: -2px;
+    }
+}
+
+@media screen and (min-width: 767px) and (max-width: 992px) {
+    /*平板*/
+    /*尋覽列表*/
+    .navbar-form {
+        width: 110px;
+    }
+    .navbar-form> .form-group {
+        margin-left: -20px;
+        width: 70%;
+    }
+    .navbar-form > .form-group > .form-control {
+        width: 100%;
+    }
+    .navbar-form> .btn {
+        margin-left: -2px;
+    }
+}
+
+@media screen and (max-width:767px) {
+    /*手機*/
+    /*尋覽列表*/
+    .navbar-form {
+			display: none;
+    }
+    .navbar-form2 {
+        display: flex;
+    }
+    .navbar-form2 > .form-group {
+        width: 100%;
+        margin: 0px 5px 0px 10px;
+    }
+    .navbar-form2 > .form-group > .form-control {
+        height: 35px;
+    }
+    .navbar-form2 > .btn {
+        height: 35px;
+        margin: 0px 10px 0px 5px;
+    }
+}
