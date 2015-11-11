@@ -9,13 +9,14 @@
 
 <body>
     <!-- navbar -->
-    <?php include('navbar.php'); ?>
+    <?php include('navbar.php');?>
     <!-- Page Content -->
     <div class="container">
         <!-- Marketing Icons Section -->
         <div class="row">
             <?php
-                for($i = (count($note_data)-1) ; $i >= 0 ; $i--){
+                for($i = $page_num ; $i <= ($page_num + $config['per_page'])-1 ; $i++){
+                    if (!empty($note_data[$i]->note_title)) {
                     //抓取文章代碼
                     //$id = $note_data[$i]->id;
                     //$da = str_replace ("-","",$note_data[$i]->createdate);
@@ -62,9 +63,12 @@
                     echo '<div class="info col-md-3"><h4><i class="fa fa-pencil-square-o"> : Shrhe</i></h4></div>';
                     echo '<a href="'.$url_add.$note_data[$i]->note_id.'" class=" col-md-12 btn btn-'.$class_color.' btn-lg btn-block">查看筆記..</a>';
                     echo '</div></div></div>';
-                }
+                }}
             ?>
             <!-- /.row -->
+        </div>
+        <div class="container">
+                <?php echo $this->pagination->create_links(); ?>
         </div>
         <hr>
         <!-- Footer -->

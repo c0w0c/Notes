@@ -20,7 +20,6 @@ class Page_m extends CI_Model{
 	function note_Tag_select($note_class){
 		$this->db->where("note_class",$note_class);
 		$this->db->select("*");
-		$this->db->order_by('id', 'DESC');
 		$q = $this->db->get('note_data');
 		return $q -> result();
 	}

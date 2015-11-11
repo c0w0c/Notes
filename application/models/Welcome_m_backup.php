@@ -1,4 +1,4 @@
-<?php
+<?php 
 class Welcome_m extends CI_Model{
 
 	//必要繼承父元件
@@ -11,7 +11,6 @@ class Welcome_m extends CI_Model{
 	//類別一 搜尋note_data資料表全部資料
 	function note_select_all(){
 		$this->db->select("*");
-		$this->db->order_by('id', 'DESC');
 		$q = $this->db->get('note_data');
 		return $q -> result();
 	}

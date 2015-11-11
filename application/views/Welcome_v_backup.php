@@ -3,10 +3,9 @@
 <head>
     <!-- head設定 -->
     <?php include('head_Setting.php'); ?>
-    <!-- CSS -->
+    <!-- Custom CSS -->
     <link href="assets/css/welcome_layout.css" rel="stylesheet">
 </head>
-
 
 <body>
     <!-- navbar -->
@@ -16,11 +15,7 @@
         <!-- Marketing Icons Section -->
         <div class="row">
             <?php
-            if (count($note_data) == 0 ) {
-                    echo '<div class="container"><div class="alert alert-warning" role="alert"><h1 class="text-center"><strong>Sorry! 目前尚未有相關文章喔!</strong></h1></div></div>';
-            }else{
-                for($i = $page_num ; $i <= ($page_num + $config['per_page'])-1 ; $i++){
-                    if (!empty($note_data[$i]->note_title)) {
+                for($i = (count($note_data)-1) ; $i >= 0 ; $i--){
                     //抓取文章代碼
                     //$id = $note_data[$i]->id;
                     //$da = str_replace ("-","",$note_data[$i]->createdate);
@@ -67,12 +62,9 @@
                     echo '<div class="info col-md-3"><h4><i class="fa fa-pencil-square-o"> : Shrhe</i></h4></div>';
                     echo '<a href="'.$url_add.$note_data[$i]->note_id.'" class=" col-md-12 btn btn-'.$class_color.' btn-lg btn-block">查看筆記..</a>';
                     echo '</div></div></div>';
-                }}}
+                }
             ?>
-        <!-- /.row -->
-        </div>
-        <div class="container">
-                <?php echo $this->pagination->create_links(); ?>
+            <!-- /.row -->
         </div>
         <hr>
         <!-- Footer -->
@@ -80,7 +72,7 @@
             <h4 class="text-center">
                 <strong>Copyright © 2015 by Shrhe</strong>
             </h4>
-            <h6 class="text-center"><a href="<?php echo base_url().'Welcome/bk1' ?>">第一版</a> | <a href="<?php echo base_url().'Welcome/bk2' ?>">第二版</a></h6>
+            <h6 class="text-center"><a href="Welcome/bk1">第一版</a> | <a href="Welcome/bk2">第二版</a></h6>
         </footer>
     </div>
     <!-- /.container -->
