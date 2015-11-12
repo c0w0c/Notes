@@ -30,7 +30,7 @@ class Page extends CI_Controller {
 		$config['base_url'] = 'Page/Tag/'.$note_class.'';
 		$config['total_rows'] = count($note_data);
 		$config['per_page'] = 2;
-		$config['uri_segment'] = 3;
+		$config['uri_segment'] = 4;
 		$config['num_links'] = 3;
 		$config['full_tag_open'] = '<h1 class="text-center">';
 		$config['full_tag_close'] = '</h1>';

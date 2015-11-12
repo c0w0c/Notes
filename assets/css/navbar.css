@@ -32,6 +32,9 @@
     .navbar-form> .btn {
         margin-left: -2px;
     }
+    .navbar-form2 {
+			display: none;
+    }
 }
 
 @media screen and (min-width: 767px) and (max-width: 992px) {
@@ -49,6 +52,9 @@
     }
     .navbar-form> .btn {
         margin-left: -2px;
+    }
+    .navbar-form2 {
+			display: none;
     }
 }
 
