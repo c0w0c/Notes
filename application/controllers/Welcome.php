@@ -5,39 +5,20 @@ class Welcome extends CI_Controller {
 
 	public function index($page_num)
 	{
-		if (!$page_num) {
-			$page_num = 0;
+		if (!$page_num) {	//當無輸入時分頁數為1
+			$page_num = 1;
 		}
 
 		$this->load->model('Welcome_m');
 		$note_data = $this->Welcome_m->note_select_all();
-
-		$this->load->library('Pagination');
-		$config['base_url'] = 'Welcome/index';
-		$config['total_rows'] = count($note_data);
-		$config['per_page'] = 4;
-		$config['uri_segment'] = 3;
-		$config['num_links'] = 3;
-		$config['full_tag_open'] = '<h1 class="text-center">';
-		$config['full_tag_close'] = '</h1>';
-		$config['first_link'] = '';
-		$config['first_tag_open'] = '<span>';
-		$config['first_tag_close'] = '</span>';
-		$config['last_link'] = '';
-		$config['last_tag_open'] = '<span>';
-		$config['last_tag_close'] = '</span>';
-		$config['next_link'] = '<i class="fa fa-arrow-circle-right"></i>';
-		$config['next_tag_open'] = '<span> ';
-		$config['next_tag_close'] = '</span>';
-		$config['prev_link'] = '<i class="fa fa-arrow-circle-left"></i>';
-		$config['prev_tag_open'] = '<span>';
-		$config['prev_tag_close'] = ' </span>';
-		$config['cur_tag_open'] = '<strong style="color:red;"> ';
-		$config['cur_tag_close'] = '</strong>';
-		$config['num_tag_open'] = '<strong> ';
-		$config['num_tag_close'] = '</strong>';
-		$this->pagination->initialize($config);
-
+		//使用pagination CI內建函數，已經內建函數改為替代為自己設定好參數函數
+		//位址為application/libraries及application/language/english
+		$this->load->library('pagination');
+		$config['base_url'] = 'Welcome/index';		//分頁網址
+		$config['total_rows'] = count($note_data);//資料總筆數
+		$config['per_page'] = 4;									//每頁顯示資料數
+		$config['uri_segment'] = 3;								//讀取網址第幾個區塊為頁碼
+		$this->pagination->initialize($config);		//寫入設定參數
 		$data = array(
 			'note_data' => $note_data,
 			'page_num' => $page_num,

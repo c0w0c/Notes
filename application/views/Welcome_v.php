@@ -15,7 +15,7 @@
         <!-- Marketing Icons Section -->
         <div class="row">
             <?php
-                for($i = $page_num ; $i <= ($page_num + $config['per_page'])-1 ; $i++){
+                for($i = ($page_num -1 ) * $config['per_page'] ; $i <= ($page_num * $config['per_page'])-1 ; $i++){
                     if (!empty($note_data[$i]->note_title)) {
                     //抓取文章代碼
                     //$id = $note_data[$i]->id;
