@@ -156,42 +156,42 @@ class CI_Pagination {
 	 * 頁碼全區標籤開始
 	 * @var	string
 	 */
-	protected $full_tag_open = '<h1 class="text-center">';
+	protected $full_tag_open = '<nav class="text-center"><ul class="pagination pagination-lg">';
 
 	/**
 	 * Full tag close
 	 * 頁碼全區標籤結束
 	 * @var	string
 	 */
-	protected $full_tag_close = '</h1>';
+	protected $full_tag_close = '</ul></nav>';
 
 	/**
 	 * First tag open
 	 * 第一頁標籤開始
 	 * @var	string
 	 */
-	protected $first_tag_open = '<span>';
+	protected $first_tag_open = '';
 
 	/**
 	 * First tag close
 	 * 第一頁標籤結束
 	 * @var	string
 	 */
-	protected $first_tag_close = '</span>';
+	protected $first_tag_close = '';
 
 	/**
 	 * Last tag open
 	 * 最後一頁標籤開始
 	 * @var	string
 	 */
-	protected $last_tag_open = '<span>';
+	protected $last_tag_open = '';
 
 	/**
 	 * Last tag close
 	 * 最後一頁標籤結束
 	 * @var	string
 	 */
-	protected $last_tag_close = '</span>';
+	protected $last_tag_close = '';
 
 	/**
 	 * First URL
@@ -207,56 +207,56 @@ class CI_Pagination {
 	 * 目前所在頁數字標籤開始
 	 * @var	string
 	 */
-	protected $cur_tag_open = '<strong style="color:red;"> ';
+	protected $cur_tag_open = '<li class="active"><span>';
 
 	/**
 	 * Current tag close
 	 * 目前所在頁數字標籤結束
 	 * @var	string
 	 */
-	protected $cur_tag_close = '</strong>';
+	protected $cur_tag_close = '</span></li>';
 
 	/**
 	 * Next tag open
 	 * 下一筆標籤開始
 	 * @var	string
 	 */
-	protected $next_tag_open = '<span> ';
+	protected $next_tag_open = '<li>';
 
 	/**
 	 * Next tag close
 	 * 下一筆標籤結束
 	 * @var	string
 	 */
-	protected $next_tag_close = '</span>';
+	protected $next_tag_close = '</li>';
 
 	/**
 	 * Previous tag open
 	 * 上一筆標籤開始
 	 * @var	string
 	 */
-	protected $prev_tag_open = '<span>';
+	protected $prev_tag_open = '<li>';
 
 	/**
 	 * Previous tag close
-	 * 下一筆標籤結束
+	 * 上一筆標籤結束
 	 * @var	string
 	 */
-	protected $prev_tag_close = ' </span>';
+	protected $prev_tag_close = '</li>';
 
 	/**
 	 * Number tag open
 	 * 頁碼數字標籤開始
 	 * @var	string
 	 */
-	protected $num_tag_open = '<strong> ';
+	protected $num_tag_open = '<li>';
 
 	/**
 	 * Number tag close
 	 * 頁碼數字標籤結束
 	 * @var	string
 	 */
-	protected $num_tag_close = '</strong>';
+	protected $num_tag_close = '</li>';
 
 	/**
 	 * Page query string flag

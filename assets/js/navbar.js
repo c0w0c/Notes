@@ -57,4 +57,38 @@ $(window).load(function() {
             header.removeClass('Transparent');
         };
     });
+    $(".form-lg").focus(function() {
+        //$(this).animate({
+        //    width: "150px"
+        //});
+        $(this).css({
+            "width": "150px",
+            "background-color": "#FFFFFF",
+            "color": "#ccc",
+            "transition": "0.5s"
+        });
+        $('.navbar-form > .btn').css({
+            "display": "inline",
+            "transition": "0.2s"
+        });
+    });
+    $(".form-lg").blur(function() {
+        if (!$(this).val() == '') {
+
+        } else {
+            $(this).css({
+                "width": "52px",
+                "background-color": "#2b2b2b",
+                "color": "#fff",
+                "transition": "0.5s"
+            });
+            $('.navbar-form > .btn').css({
+                "display": "none",
+                "transition": "0.2s"
+            });
+        };
+        //$(this).animate({
+        //    width: "0px"
+        //});
+    });
 });

@@ -18,7 +18,7 @@
                         <div class="form-group">
                             <input type="text" placeholder="搜尋文章..." class="form-control">
                         </div>
-                        <button type="submit" class="btn btn-success"><i class="fa fa-search"></i></button>
+                        <button type="submit" class="btn2 btn-success"><i class="fa fa-search"></i></button>
                     </form>
                 </li>
                 <li>
@@ -48,11 +48,9 @@
                     </ul>
                 </li>
                 <li>
-                    <form class="navbar-form">
-                        <div class="form-group">
-                            <input type="text" placeholder="搜尋文章..." class="form-control">
-                        </div>
+                    <form class="navbar-form" action="123.php">
                         <button type="submit" class="btn btn-success"><i class="fa fa-search"></i></button>
+                        <input type="text" placeholder="搜尋文章..." class="form-control form-lg">
                     </form>
                 </li>
             </ul>
