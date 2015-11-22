@@ -14,9 +14,9 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <form class="navbar-form2">
+                    <form class="navbar-form2" method="POST" action="Page/Search">
                         <div class="form-group">
-                            <input type="text" placeholder="搜尋文章..." class="form-control">
+                            <input type="text" name="Search_str" placeholder="搜尋文章..." maxlength="12" required="required" class="form-control">
                         </div>
                         <button type="submit" class="btn2 btn-success"><i class="fa fa-search"></i></button>
                     </form>
@@ -48,9 +48,9 @@
                     </ul>
                 </li>
                 <li>
-                    <form class="navbar-form" action="123.php">
+                    <form class="navbar-form" method="POST" action="Page/Search">
                         <button type="submit" class="btn btn-success"><i class="fa fa-search"></i></button>
-                        <input type="text" placeholder="搜尋文章..." class="form-control form-lg">
+                        <input type="text" name="Search_str" placeholder="搜尋文章..." maxlength="12" required="required" class="form-control form-lg">
                     </form>
                 </li>
             </ul>
