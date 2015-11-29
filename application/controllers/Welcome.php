@@ -19,12 +19,20 @@ class Welcome extends CI_Controller {
 		$config['per_page'] = 4;									//每頁顯示資料數
 		$config['uri_segment'] = 3;								//讀取網址第幾個區塊為頁碼
 		$this->pagination->initialize($config);		//寫入設定參數
+
+		//抓取各類別文章數量
+		$this->load->model('Navbar_m');
+		$class_name = array(0 => 'HTML5',1 => 'CSS3',2 => 'Javascript',3 => 'Bootstrap',4 => 'PHP',5 => 'Codeigniter',6 => 'Python',7 => 'Django',8 => 'SublimeText',);
+		for ($i=0; $i < count($class_name) ; $i++) {
+			$badge[$class_name[$i]] = count($this->Navbar_m->class_count($class_name[$i]));
+		}
+
 		$data = array(
 			'note_data' => $note_data,
 			'page_num' => $page_num,
-			'config' => $config
+			'config' => $config,
+			'badge' => $badge,
 		);
-
 		$this->load->view('Welcome_v',$data);
 	}
 
