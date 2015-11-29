@@ -28,8 +28,20 @@
 .navbar-form2 {
     display: none;
 }
-
-
+.dropdown-menu > li > a{
+    display: -webkit-flex;
+    display: flex;
+}
+.sprite{
+  -webkit-flex: 17;
+          flex: 17;
+}
+.badge{
+  -webkit-flex: 1;
+          flex: 1;
+    border-radius: 3px;
+    background-color: #d9534f;
+}
 /* 響應式網頁 */
 
 @media screen and (min-width: 992px) {
@@ -50,14 +62,15 @@
         display: flex;
     }
     .navbar-form2 > .form-group {
-        width: 100%;
+        width: 85%;
         margin: 0px 5px 0px 10px;
     }
     .navbar-form2 > .form-group > .form-control {
-        height: 35px;
+        height: 40px;
     }
     .navbar-form2 > .btn2 {
-        height: 35px;
+        height: 40px;
+        width:  20%;
         margin: 0px 10px 0px 5px;
     }
 }

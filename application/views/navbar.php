@@ -27,24 +27,26 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Front End <b class="caret"></b></a>
                     <ul class="dropdown-menu">
-                        <li><a href="Page/Tag/HTML5"><i class="sprite sprite-html5">　 HTML5</i></a></li>
-                        <li><a href="Page/Tag/CSS3"><i class="sprite sprite-css3">　 CSS3</i></a></li>
-                        <li><a href="Page/Tag/Javascript"><i class="sprite sprite-js">　 Javascript</i></a></li>
-                        <li><a href="Page/Tag/Bootstrap"><i class="sprite sprite-bootstrap">　 Bootstrap</i></a></li>
+                        <li><a href="Page/Tag/HTML5"><i class="sprite sprite-html5">　 HTML5</i><span class="badge">0</span></a></li>
+                        <li><a href="Page/Tag/CSS3"><i class="sprite sprite-css3">　 CSS3</i><span class="badge">1</span></a></li>
+                        <li><a href="Page/Tag/Javascript"><i class="sprite sprite-js">　 Javascript</i><span class="badge">0</span></a></li>
+                        <li><a href="Page/Tag/Bootstrap"><i class="sprite sprite-bootstrap">　 Bootstrap</i><span class="badge">0</span></a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Back End <b class="caret"></b></a>
                     <ul class="dropdown-menu">
-                        <li><a href="Page/Tag/PHP"><i class="sprite sprite-php">　 PHP</i></a></li>
-                        <li><a href="Page/Tag/Codeigniter"><i class="sprite sprite-codeigniter">　 Codeigniter</i></a></li>
+                        <li><a href="Page/Tag/PHP"><i class="sprite sprite-php">　 PHP</i><span class="badge">0</span></a></li>
+                        <li><a href="Page/Tag/Codeigniter"><i class="sprite sprite-codeigniter">　 Codeigniter</i><span class="badge">3</span></a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="Page/Tag/Python"><i class="sprite sprite-python">　 Python</i><span class="badge">0</span></a></li>
+                        <li><a href="Page/Tag/Django"><i class="sprite sprite-django">　 Django</i><span class="badge">0</span></a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Other <b class="caret"></b></a>
                     <ul class="dropdown-menu">
-                        <li><a href="Page/Tag/Python"><i class="sprite sprite-python">　 Python</i></a></li>
-                        <li><a href="Page/Tag/SublimeText"><i class="sprite sprite-sublimetext">　 SublimeText</i></a></li>
+                        <li><a href="Page/Tag/SublimeText"><i class="sprite sprite-sublimetext">　SublimeText</i><span class="badge">1</span></a></li>
                     </ul>
                 </li>
                 <li>

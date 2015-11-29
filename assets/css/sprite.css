@@ -27,32 +27,38 @@
     background-position: -10px -83px;
 }
 
-.sprite-html5 {
+.sprite-django {
     width: 16px;
     height: 16px;
     background-position: -10px -118px;
 }
 
+.sprite-html5 {
+    width: 16px;
+    height: 16px;
+    background-position: -10px -153px;
+}
+
 .sprite-js {
     width: 16px;
     height: 18px;
-    background-position: -10px -153px;
+    background-position: -10px -188px;
 }
 
 .sprite-php {
     width: 16px;
     height: 15px;
-    background-position: -10px -188px;
+    background-position: -10px -223px;
 }
 
 .sprite-python {
     width: 16px;
     height: 16px;
-    background-position: -10px -219px;
+    background-position: -10px -254px;
 }
 
 .sprite-sublimetext {
     width: 16px;
     height: 16px;
-    background-position: -10px -254px;
+    background-position: -10px -289px;
 }
