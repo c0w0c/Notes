@@ -22,7 +22,7 @@
                     </form>
                 </li>
                 <li>
-                    <a href="#">About</a>
+                    <a href="Page/About_Me">About</a>
                 </li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Front End <b class="caret"></b></a>

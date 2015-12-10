@@ -98,7 +98,7 @@ class Page extends CI_Controller {
 	public function About_Me() {
 		include('navbar_count.php');//抓取各類別文章數量
 		$data = array('badge'=> $badge,);
-		$this->load->view('Page_v_class',$data);
+		$this->load->view('About_Me',$data);
 	}
 }
 ?>
