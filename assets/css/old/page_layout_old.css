@@ -19,13 +19,13 @@ body {
 }
 
 body {
-    background-color: #FFC2C2;
+    background-color: #E2E2E2;
     padding-top: 65px;
     /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
 }
 
 .page-header {
-    /*bs-page-header字體設定*/
+    /*page-header字體設定*/
     margin-top: 15px;
     font-family: myfont;
     font-size: 36pt;
@@ -59,11 +59,9 @@ body {
     border-top: 1px #339966 solid;
     border-bottom: 1px #339966 solid;
 }
-
-i.fa-check-square-o {
+i.fa-check-square-o{
     font-weight: 900;
 }
-
 span {
     /*小註解字體設定*/
     font-size: small;
@@ -75,23 +73,31 @@ footer {
     margin: 50px 0;
 }
 
-.alert-danger {
-    color: #a4660e;
-}
-
 
 /* 響應式網頁 */
 
 @media screen and (min-width: 992px) {
     /*桌面*/
-    .cl2 {
+
+    .ti {
+        float: left;
+        text-align: left;
+    }
+    .cl {
+        clear: right;
         text-align: right;
     }
 }
 
 @media screen and (min-width: 768px) and (max-width: 992px) {
     /*平板*/
-    .cl2 {
+
+    .ti {
+        float: left;
+        text-align: left;
+    }
+    .cl {
+        clear: right;
         text-align: right;
     }
     footer > h4 {
@@ -103,6 +109,11 @@ footer {
 
 @media screen and (max-width:768px) {
     /*手機*/
+
+    .ti,
+    .cl {
+        margin-left: 5%;
+    }
     .page-header {
         /*page-header字體設定*/
         font-family: myfont;
@@ -123,15 +134,9 @@ footer {
         margin-bottom: 50px;
         color: #B9B9B9;
     }
-    i.fa-check-square-o {
-        font-size: 16pt;
-    }
     footer > h4 {
         /*地板文字*/
         height: 0px;
         margin-top: -30px;
-    }
-    .baner > h3 {
-        font-size: 12pt;
     }
 }
