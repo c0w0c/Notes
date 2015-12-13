@@ -3,20 +3,20 @@
 <head>
     <!-- head設定 -->
     <?php include('head_Setting.php'); ?>
-    <!-- Custom CSS -->
+    <!-- CSS -->
     <link href="assets/css/welcome_layout.css" rel="stylesheet">
 </head>
 
 <body>
     <!-- navbar -->
-    <?php include('navbar.php');?>
-    <!-- Page Content -->
+    <?php include('navbar.php'); ?>
+    <!-- container -->
     <div class="container">
-        <!-- Marketing Icons Section -->
+        <!--row-->
         <div class="row">
-            <?php
-                for($i = ($page_num -1 ) * $config['per_page'] ; $i <= ($page_num * $config['per_page'])-1 ; $i++){
-                    if (!empty($note_data[$i]->note_title)) {
+        <?php for ($i = ($page_num -1 ) * $config['per_page'] ; $i <= ($page_num * $config['per_page'])-1 ; $i++): ?>
+            <?php if (!empty($note_data[$i]->note_title)): ?>
+                <?php
                     //抓取文章代碼
                     //$id = $note_data[$i]->id;
                     //$da = str_replace ("-","",$note_data[$i]->createdate);
@@ -53,31 +53,32 @@
 
                     //抓取概要內容
                     $cont = strstr($note_data[$i]->note_contents,"|");
-
-                    echo '<div class="col-md-6 panel-box"><div class="panel panel-'.$class_color.'">';
-                    echo '<div class="panel-heading"><h2><i class="fa fa-thumb-tack"> '.$note_data[$i]->note_class.'</i></h2></div>';
-                    echo '<div class="panel-body"><div class="panel_img" style="background-image:url(assets/img/index/'.$note_data[$i]->note_id.'.png);"></div>';
-                    echo '<h1 class="con-title">《'.substr($note_data[$i]->note_title,0,$ti_num).'》</h1>';
-                    echo '<h4 class="text-justify text-muted ">'.mb_substr($cont,1,50,"utf-8").'...</h3>';
-                    echo '<div class="info col-md-9"><h4><i class="fa fa-calendar"> : '.$note_data[$i]->createdate.'</i></h4></div>';
-                    echo '<div class="info col-md-3"><h4><i class="fa fa-pencil-square-o"> : Shrhe</i></h4></div>';
-                    echo '<a href="'.$url_add.$note_data[$i]->note_id.'" class=" col-md-12 btn btn-'.$class_color.' btn-lg btn-block">查看筆記..</a>';
-                    echo '</div></div></div>';
-                }}
-            ?>
-            <!-- /.row -->
+                ?>
+                <div class="col-md-6 panel-box"><div class="panel panel-<?=$class_color?>">
+                <div class="panel-heading"><h2><i class="fa fa-thumb-tack"> <?=$note_data[$i]->note_class?></i></h2></div>
+                <div class="panel-body"><div class="panel_img" style="background-image:url(assets/img/index/<?=$note_data[$i]->note_id?>.png);"></div>
+                <h1 class="con-title">《<?=substr($note_data[$i]->note_title,0,$ti_num)?>》</h1>
+                <h4 class="text-justify text-muted "><?=mb_substr($cont,1,50,"utf-8")?>...</h3>
+                <div class="info col-md-9"><h4><i class="fa fa-calendar"> : <?=$note_data[$i]->createdate?></i></h4></div>
+                <div class="info col-md-3"><h4><i class="fa fa-pencil-square-o"> : Shrhe</i></h4></div>
+                <a href="<?=$url_add.$note_data[$i]->note_id?>" class=" col-md-12 btn btn-<?=$class_color?> btn-lg btn-block">查看筆記..</a>
+                </div></div></div>
+            <?php endif ?>
+        <?php endfor ?>
         </div>
+        <!-- /.row -->
+        <!-- 分頁標籤 -->
         <div class="container">
-                <?php echo $this->pagination->create_links(); ?>
+            <?php echo $this->pagination->create_links(); ?>
         </div>
+        <!-- /.分頁標籤 -->
         <hr>
         <!-- Footer -->
         <footer>
-            <h4 class="text-center">
-                <strong>Copyright © 2015 by Shrhe</strong>
-            </h4>
+            <h4 class="text-center"><strong>Copyright © 2015 by Shrhe</strong></h4>
             <h6 class="text-center"><a href="Welcome/bk1">第一版</a> | <a href="Welcome/bk2">第二版</a></h6>
         </footer>
+        <!-- /.Footer -->
     </div>
     <!-- /.container -->
 </body>

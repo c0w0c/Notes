@@ -12,6 +12,9 @@
     <?php include('navbar.php'); ?>
     <!--container-->
     <div class="container">
+    <?php if (empty($note_data[0]->note_title)): //判斷是否有該篇文章?>
+        <hr><div class="alert alert-warning" role="alert"><h1 class="text-center"><strong>Sorry! 目前尚未有相關文章喔!</strong></h1></div>
+    <?php else: ?>
         <div class="row">
             <div class="col-md-12">
                 <div class="page-header text-center">【<?php echo str_replace("|","",$note_data[0]->note_title); ?>】</div>
@@ -19,10 +22,10 @@
         </div>
         <div class="container-fluid">
         <div class="row">
-                <div class="col-md-12 col-sm-12 alert alert-danger">
-                    <div class="col-md-9 col-sm-9"><i class="fa fa-clock-o fa-2x"> <?php echo $note_data[0]->createdate; ?></i></div>
-                    <div class="col-md-3 col-sm-3 cl2"><i class="fa fa-tags fa-2x"> <?php echo $note_data[0]->note_class; ?></i></div>
-                </div>
+            <div class="col-md-12 col-sm-12 alert alert-danger">
+            <div class="col-md-9 col-sm-9"><i class="fa fa-clock-o fa-2x"> <?php echo $note_data[0]->createdate; ?></i></div>
+            <div class="col-md-3 col-sm-3 cl2"><i class="fa fa-tags fa-2x"> <?php echo $note_data[0]->note_class; ?></i></div>
+            </div>
         </div></div>
         <div class="container-fluid">
         <div class="row">
@@ -30,8 +33,8 @@
                 <!--文章內容-->
                 <div class="con">
                 <?php
-                    if ($test === true) {
-                        //測試用頁
+                    if ($note_data[0]->test === true) {
+                        //page編輯測試用頁
                         include('page_v_id_edit_con.php');
                     }else{
                         //內容字串處理
@@ -41,7 +44,7 @@
                     }
                 ?>
                 </div>
-                <!--文章內容結束-->
+                <!-- /.文章內容-->
             </div>
         </div>
         <!-- 留言板 -->
@@ -51,13 +54,14 @@
             </div>
         </div>
         </div>
-        <!-- 留言板結束 -->
-    	<!-- Footer -->
+        <!-- /.留言板 -->
+    <?php endif ?>
         <hr>
-    	<footer>
+        <!-- Footer -->
+        <footer>
             <h4 class="text-center"><strong>Copyright © 2015 by Shrhe</strong></h4>
         </footer>
-        <!-- Footer -->
+        <!-- /.Footer -->
     </div>
     <!-- /.container -->
 </body>
