@@ -62,7 +62,7 @@
             <div class="panel-heading"><h2><i class="fa fa-thumb-tack"> <?=$note_data[$i]->note_class?></i></h2></div>
             <div class="panel-body">
             <div class="row">
-            <div class="panel_img col-md-12" style="background-image:url(assets/img/index/<?=$note_data[$i]->note_id?>.png);"></div>
+            <div class="col-md-12 panel_img_box"><div class="panel_img" style="background-image:url(assets/img/index/<?=$note_data[$i]->note_id?>.png);"></div></div>
             <div class="col-md-12">
                 <!-- 首頁差異 類別未加 .title -->
                 <h1 class="text-center"><strong>《<?=substr($note_data[$i]->note_title,0,$ti_num)?>》</strong></h1>

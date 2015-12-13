@@ -59,7 +59,7 @@
                 <div class="panel-heading"><h2><i class="fa fa-thumb-tack"> <?=$note_data[$i]->note_class?></i></h2></div>
                 <div class="panel-body">
                 <div class="row">
-                <div class="panel_img col-md-6" style="background-image:url(assets/img/index/<?=$note_data[$i]->note_id?>.png);"></div>
+                <div class="col-md-6 panel_img_box"><div class="panel_img" style="background-image:url(assets/img/index/<?=$note_data[$i]->note_id?>.png);"></div></div>
                 <div class="col-md-6">
                     <h1 class="text-center title"><strong>《<?=substr($note_data[$i]->note_title,0,$ti_num)?>》</strong></h1>
                     <h3 class="text-justify text-muted cont"><?=strip_tags(mb_substr($cont,1,35,"utf-8"))?>...</h3>

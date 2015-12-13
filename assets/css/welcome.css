@@ -29,11 +29,18 @@ body {
     box-shadow: 1px 1px 15px 3px rgba(20%, 20%, 40%, 0.5);
 }
 
+.panel_img_box{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
 .panel_img {
-    height: 219px;
+    width: 90%;
+    height: 208px;
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 90% 100%;
+    background-size: 100% 100%;
 }
 
 .panel-heading {
