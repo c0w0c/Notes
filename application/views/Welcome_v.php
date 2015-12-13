@@ -4,7 +4,7 @@
     <!-- head設定 -->
     <?php include('head_Setting.php'); ?>
     <!-- CSS -->
-    <link href="assets/css/welcome_layout.css" rel="stylesheet">
+    <link href="assets/css/welcome.css" rel="stylesheet">
 </head>
 
 <body>
@@ -54,15 +54,21 @@
                     //抓取概要內容
                     $cont = strstr($note_data[$i]->note_contents,"|");
                 ?>
-                <div class="col-md-6 panel-box"><div class="panel panel-<?=$class_color?>">
+                <div class="col-md-12 panel-box">
+                <div class="panel panel-<?=$class_color?>">
                 <div class="panel-heading"><h2><i class="fa fa-thumb-tack"> <?=$note_data[$i]->note_class?></i></h2></div>
-                <div class="panel-body"><div class="panel_img" style="background-image:url(assets/img/index/<?=$note_data[$i]->note_id?>.png);"></div>
-                <h1 class="con-title">《<?=substr($note_data[$i]->note_title,0,$ti_num)?>》</h1>
-                <h4 class="text-justify text-muted "><?=mb_substr($cont,1,50,"utf-8")?>...</h3>
-                <div class="info col-md-9"><h4><i class="fa fa-calendar"> : <?=$note_data[$i]->createdate?></i></h4></div>
-                <div class="info col-md-3"><h4><i class="fa fa-pencil-square-o"> : Shrhe</i></h4></div>
-                <a href="<?=$url_add.$note_data[$i]->note_id?>" class=" col-md-12 btn btn-<?=$class_color?> btn-lg btn-block">查看筆記..</a>
-                </div></div></div>
+                <div class="panel-body">
+                <div class="row">
+                <div class="panel_img col-md-6" style="background-image:url(assets/img/index/<?=$note_data[$i]->note_id?>.png);"></div>
+                <div class="col-md-6">
+                    <h1 class="text-center title"><strong>《<?=substr($note_data[$i]->note_title,0,$ti_num)?>》</strong></h1>
+                    <h3 class="text-justify text-muted cont"><?=strip_tags(mb_substr($cont,1,35,"utf-8"))?>...</h3>
+                    <div class="row">
+                        <div class="col-xs-8 col-sm-10 col-md-9"><h4><i class="fa fa-calendar"> : <?=$note_data[$i]->createdate?></i></h4></div>
+                        <div class="col-xs-4 col-sm-2 col-md-3"><h4><i class="fa fa-pencil-square-o"> : Shrhe</i></h4></div>
+                    </div>
+                    <a href="<?=$url_add.$note_data[$i]->note_id?>" class=" col-md-12 btn btn-<?=$class_color?> btn-lg btn-block">查看筆記</a>
+                </div></div></div></div></div>
             <?php endif ?>
         <?php endfor ?>
         </div>
