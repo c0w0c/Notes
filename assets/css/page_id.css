@@ -87,6 +87,16 @@ footer {
     .cl2 {
         text-align: right;
     }
+    .shareimg{
+        opacity:0.5;
+    }
+    .shareimg:hover{
+        opacity:1.0;
+        -o-transition: opacity 0.5s ;
+        -webkit-transition: opacity 0.5s ;
+        -moz-transition: opacity 0.5s ;
+        transition:  opacity 0.5s ;
+    }
 }
 
 @media screen and (min-width: 768px) and (max-width: 992px) {
