@@ -1,8 +1,17 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<!-- FB share -->
+<meta property="og:url"           content="<?=current_url();?>" />
+<meta property="og:type"          content="website" />
+<meta property="og:title"         content="<?=str_replace("|","",$note_data[0]->note_title); ?>" />
+<meta property="og:description"   content="<?=strip_tags(mb_substr(strstr($note_data[0]->note_contents,"|"),1,70,"utf-8"))?>..." />
+<meta property="og:image"         content="<?=base_url().'assets/img/index/'.$note_data[0]->note_id.'.png' ;?>" />
+<meta property="og:site_name" 		content="Shrhe" />
+<!-- google share -->
+<link rel="canonical" href="<?=current_url();?>" />
 <!-- 連結絕對路徑話 -->
-<base href="<?php echo base_url();?>" />
+<base href="<?= base_url();?>" />
 <link rel="icon" href="assets/img/nav/shrhe.ico">
 <title>ShrHe 學習筆記</title>
 <!-- Bootstrap core CSS -->

@@ -45,6 +45,17 @@
                 ?>
                 </div>
                 <!-- /.文章內容-->
+                <!-- 分享列表 -->
+                <br>
+                <hr>
+                <div class="row">
+                    <div class="col-md-12 col-xs-12">
+                        <!-- 分享按鈕 -->
+                        <?php include('sharebtn.php'); ?>
+                        <!-- ./分享按鈕 -->
+                    </div>
+                </div>
+                <!-- /.分享列表 -->
             </div>
         </div>
         <!-- 留言板 -->
@@ -53,8 +64,8 @@
                 <?php include('disqus.php'); ?>
             </div>
         </div>
-        </div>
         <!-- /.留言板 -->
+        </div>
     <?php endif ?>
         <hr>
         <!-- Footer -->
