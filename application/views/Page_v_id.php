@@ -3,6 +3,7 @@
 <head>
     <!-- head設定 -->
     <?php include('head_Setting.php'); ?>
+    <title><?=str_replace("|","",$note_data[0]->note_title); ?> - 【ShrHe 學習筆記】</title>
     <!-- CSS -->
     <link href="assets/css/page_id.css" rel="stylesheet">
 </head>

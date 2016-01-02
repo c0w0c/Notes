@@ -15,7 +15,6 @@
 <!-- 連結絕對路徑話 -->
 <base href="<?= base_url();?>" />
 <link rel="icon" href="assets/img/nav/shrhe.ico">
-<title>ShrHe 學習筆記</title>
 <!-- Bootstrap core CSS -->
 <link href="assets/css/bootstrap.min.css" rel="stylesheet">
 <!-- Custom Fonts -->

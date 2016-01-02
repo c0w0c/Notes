@@ -4,7 +4,7 @@
     <!-- head設定 -->
     <?php include('head_Setting.php'); ?>
     <!-- Custom CSS -->
-    <link href="assets/css/page_layout.css" rel="stylesheet">
+    <link href="assets/css/page_id.css" rel="stylesheet">
 </head>
 
 <body>

@@ -2,13 +2,8 @@
 <html  lang="zh-Hant-TW">
 <!--第二版首頁-->
     <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-        <meta name="description" content="">
-        <meta name="author" content="">
-        <link rel="icon" href="">
+    <!-- head設定 -->
+    <?php include('head_Setting.php'); ?>
         <title>ShrHe 學習筆記</title>
         <!-- Bootstrap core CSS -->
         <link href="<?php echo base_url().'assets/css/bootstrap.min.css';?>" rel="stylesheet">

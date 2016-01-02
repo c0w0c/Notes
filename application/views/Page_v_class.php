@@ -3,6 +3,7 @@
 <head>
     <!-- head設定 -->
     <?php include('head_Setting.php'); ?>
+    <title>ShrHe 學習筆記</title>
     <!-- CSS -->
     <link href="assets/css/welcome.css" rel="stylesheet">
 </head>
