@@ -8,8 +8,10 @@
 <meta property="og:description"   content="<?=strip_tags(mb_substr(strstr($note_data[0]->note_contents,"|"),1,70,"utf-8"))?>..." />
 <meta property="og:image"         content="<?=base_url().'assets/img/index/'.$note_data[0]->note_id.'.png' ;?>" />
 <meta property="og:site_name" 		content="Shrhe" />
-<!-- google share -->
-<link rel="canonical" href="<?=current_url();?>" />
+<!-- twitter share -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@Shrhe筆記" />
+<meta name="twitter:creator" content="@Shrhe" />
 <!-- 連結絕對路徑話 -->
 <base href="<?= base_url();?>" />
 <link rel="icon" href="assets/img/nav/shrhe.ico">
