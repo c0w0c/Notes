@@ -36,14 +36,12 @@
 		</style>
 	</head>
 	<body>
-		<div class="homebtn"><a href="<?php echo substr_replace(base_url(),'',-1) ;?>">回首頁</a></div>
+		<div class="homebtn"><a href="<?=base_url(); ?>">回首頁</a></div>
 		<nav class="navbar navbar-default">
 			<div class="container">
 				<div class="navbar-header">
 					<h1 class="navbar-text text-center">
-						<a style="color:#666666;text-decoration: none;" href="#">
-							<strong><?php echo $header_t ;?></strong>
-						</a>
+						<strong><?php echo $header_t ;?></strong>
 					</h1>
 				</div>
 			</div>
