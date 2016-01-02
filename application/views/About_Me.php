@@ -3,6 +3,7 @@
 <head>
     <!-- head設定 -->
     <?php include('head_Setting.php'); ?>
+    <title>關於Shrhe</title>
     <!-- Custom CSS -->
     <link href="assets/css/page_id.css" rel="stylesheet">
 </head>

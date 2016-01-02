@@ -23,16 +23,16 @@
         </div>
         <div class="container-fluid">
         <div class="row">
-            <div class="col-md-12 col-sm-12 alert alert-danger">
-            <div class="col-md-9 col-sm-9"><i class="fa fa-clock-o fa-2x"> <?php echo $note_data[0]->createdate; ?></i></div>
-            <div class="col-md-3 col-sm-3 cl2"><i class="fa fa-tags fa-2x"> <?php echo $note_data[0]->note_class; ?></i></div>
+            <div class="col-md-12 col-sm-12 col-xs-12 alert alert-danger">
+                <div class="col-sm-6 col-xs-12 "><i class="fa fa-clock-o fa-2x"> <?php echo $note_data[0]->createdate; ?></i></div>
+                <div class="col-sm-6 col-xs-12 info_class"><i class="fa fa-tags fa-2x"> <?php echo $note_data[0]->note_class; ?></i></div>
             </div>
         </div></div>
         <div class="container-fluid">
         <div class="row">
             <div class="col-md-12 alert alert-danger">
                 <!--文章內容-->
-                <div class="con">
+                <div class="con text-justify">
                 <?php
                     if ($note_data[0]->test === true) {
                         //page編輯測試用頁

@@ -79,14 +79,15 @@ footer {
     color: #a4660e;
 }
 
+.info_class {
+    text-align: right;
+}
+
 
 /* 響應式網頁 */
 
 @media screen and (min-width: 992px) {
     /*桌面*/
-    .cl2 {
-        text-align: right;
-    }
     .shareimg {
         opacity: 0.5;
     }
@@ -101,9 +102,6 @@ footer {
 
 @media screen and (min-width: 768px) and (max-width: 992px) {
     /*平板*/
-    .cl2 {
-        text-align: right;
-    }
     footer > h4 {
         /*地板文字*/
         height: 0px;
@@ -143,5 +141,8 @@ footer {
     }
     .baner > h3 {
         font-size: 12pt;
+    }
+    .info_class {
+        text-align: left;
     }
 }
