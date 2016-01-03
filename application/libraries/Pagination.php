@@ -1,5 +1,8 @@
 <?php
 /**
+ * 該分頁版本為自行修改配合bootstrap的按鈕群組
+ * 修改時間 2016/01/03
+ *
  * CodeIgniter
  *
  * An open source application development framework for PHP
@@ -89,7 +92,7 @@ class CI_Pagination {
 	 *
 	 * @var	int
 	 */
-	protected $num_links = 1;
+	protected $num_links = 100;
 
 	/**
 	 * Items per page
@@ -156,42 +159,42 @@ class CI_Pagination {
 	 * 頁碼全區標籤開始
 	 * @var	string
 	 */
-	protected $full_tag_open = '<h1 class="text-center">';
+	protected $full_tag_open = '<div class="btn-group btn-group-justified" role="group" aria-label="...">';
 
 	/**
 	 * Full tag close
 	 * 頁碼全區標籤結束
 	 * @var	string
 	 */
-	protected $full_tag_close = '</h1>';
+	protected $full_tag_close = '</div>';
 
 	/**
 	 * First tag open
 	 * 第一頁標籤開始
 	 * @var	string
 	 */
-	protected $first_tag_open = '<span>';
+	protected $first_tag_open = '';
 
 	/**
 	 * First tag close
 	 * 第一頁標籤結束
 	 * @var	string
 	 */
-	protected $first_tag_close = '</span>';
+	protected $first_tag_close = '';
 
 	/**
 	 * Last tag open
 	 * 最後一頁標籤開始
 	 * @var	string
 	 */
-	protected $last_tag_open = '<span>';
+	protected $last_tag_open = '';
 
 	/**
 	 * Last tag close
 	 * 最後一頁標籤結束
 	 * @var	string
 	 */
-	protected $last_tag_close = '</span>';
+	protected $last_tag_close = '';
 
 	/**
 	 * First URL
@@ -207,56 +210,56 @@ class CI_Pagination {
 	 * 目前所在頁數字標籤開始
 	 * @var	string
 	 */
-	protected $cur_tag_open = '<strong style="color:red;"> ';
+	protected $cur_tag_open = '<button type="button" class="btn btn-success btn-lg dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">';
 
 	/**
 	 * Current tag close
 	 * 目前所在頁數字標籤結束
 	 * @var	string
 	 */
-	protected $cur_tag_close = '</strong>';
+	protected $cur_tag_close = ' <span class="caret"></span></button><ul class="dropdown-menu">';
 
 	/**
 	 * Next tag open
 	 * 下一筆標籤開始
 	 * @var	string
 	 */
-	protected $next_tag_open = '<span> ';
+	protected $next_tag_open = '</ul></div><div class="btn-group" role="group">';
 
 	/**
 	 * Next tag close
 	 * 下一筆標籤結束
 	 * @var	string
 	 */
-	protected $next_tag_close = '</span>';
+	protected $next_tag_close = '</div>';
 
 	/**
 	 * Previous tag open
 	 * 上一筆標籤開始
 	 * @var	string
 	 */
-	protected $prev_tag_open = '<span>';
+	protected $prev_tag_open = '<div class="btn-group" role="group">';
 
 	/**
 	 * Previous tag close
 	 * 下一筆標籤結束
 	 * @var	string
 	 */
-	protected $prev_tag_close = ' </span>';
+	protected $prev_tag_close = '</div><div class="btn-group dropup" role="group">';
 
 	/**
 	 * Number tag open
 	 * 頁碼數字標籤開始
 	 * @var	string
 	 */
-	protected $num_tag_open = '<strong> ';
+	protected $num_tag_open = '<li class="text-center">';
 
 	/**
 	 * Number tag close
 	 * 頁碼數字標籤結束
 	 * @var	string
 	 */
-	protected $num_tag_close = '</strong>';
+	protected $num_tag_close = '</li>';
 
 	/**
 	 * Page query string flag
@@ -580,21 +583,29 @@ class CI_Pagination {
 			if ($i === $base_page)
 			{
 				// First page
-				$output .= $this->prev_tag_open.'<a href="'.$first_url.'"'.$attributes.$this->_attr_rel('prev').'>'
-					.$this->prev_link.'</a>'.$this->prev_tag_close;
+				$output .= $this->prev_tag_open.'<a role="button" class="btn btn-success btn-lg" href="'.$first_url.'"'.$attributes.$this->_attr_rel('prev').'>'
+					.$this->prev_link.'<span> 上一頁</span></a>'.$this->prev_tag_close;
 			}
 			else
 			{
 				$append = $this->prefix.$i.$this->suffix;
-				$output .= $this->prev_tag_open.'<a href="'.$base_url.$append.'"'.$attributes.$this->_attr_rel('prev').'>'
-					.$this->prev_link.'</a>'.$this->prev_tag_close;
+				$output .= $this->prev_tag_open.'<a role="button" class="btn btn-success btn-lg" href="'.$base_url.$append.'"'.$attributes.$this->_attr_rel('prev').'>'
+					.$this->prev_link.'<span> 上一頁</span></a>'.$this->prev_tag_close;
 			}
 
+		}
+
+		//自行新增部分讓上一頁永遠顯示
+		if ($this->prev_link !== FALSE && $this->cur_page === 1){
+			$output .=$this->prev_tag_open.'<a role="button" class="btn btn-success btn-lg disabled" >'.$this->prev_link.'</a>'.$this->prev_tag_close;
 		}
 
 		// Render the pages
 		if ($this->display_pages !== FALSE)
 		{
+			//寫入當前所在頁面
+			$output .= $this->cur_tag_open.$this->cur_page.$this->cur_tag_close;
+
 			// Write the digit links
 			for ($loop = $start -1; $loop <= $end; $loop++)
 			{
@@ -607,19 +618,20 @@ class CI_Pagination {
 					if ($this->cur_page === $loop)
 					{
 						// Current page
-						$output .= $this->cur_tag_open.$loop.$this->cur_tag_close;
+						//$output .= $this->cur_tag_open.$loop.$this->cur_tag_close;
+						$output .= '<li class="disabled bg-success"><a><h4 class="text-danger">'.$loop.'</h4></a></li>';
 					}
 					elseif ($i === $base_page)
 					{
 						// First page
-						$output .= $this->num_tag_open.'<a href="'.$first_url.'"'.$attributes.$this->_attr_rel('start').'>'
-							.$loop.'</a>'.$this->num_tag_close;
+						$output .= $this->num_tag_open.'<a href="'.$first_url.'"'.$attributes.$this->_attr_rel('start').'><h4>'
+							.$loop.'</h4></a>'.$this->num_tag_close;
 					}
 					else
 					{
 						$append = $this->prefix.$i.$this->suffix;
-						$output .= $this->num_tag_open.'<a href="'.$base_url.$append.'"'.$attributes.$this->_attr_rel('start').'>'
-							.$loop.'</a>'.$this->num_tag_close;
+						$output .= $this->num_tag_open.'<a href="'.$base_url.$append.'"'.$attributes.$this->_attr_rel('start').'><h4>'
+							.$loop.'</h4></a>'.$this->num_tag_close;
 					}
 				}
 			}
@@ -632,8 +644,13 @@ class CI_Pagination {
 
 			$attributes = sprintf('%s %s="%d"', $this->_attributes, $this->data_page_attr, (int) $i);
 
-			$output .= $this->next_tag_open.'<a href="'.$base_url.$this->prefix.$i.$this->suffix.'"'.$attributes
-				.$this->_attr_rel('next').'>'.$this->next_link.'</a>'.$this->next_tag_close;
+			$output .= $this->next_tag_open.'<a role="button" class="btn btn-success btn-lg" href="'.$base_url.$this->prefix.$i.$this->suffix.'"'.$attributes
+				.$this->_attr_rel('next').'><span>下一頁 </span>'.$this->next_link.'</a>'.$this->next_tag_close;
+		}
+
+		//自行新增讓下一頁永遠顯示
+		if ($this->next_link !== FALSE && $this->cur_page === $num_pages){
+			$output .= $this->next_tag_open.'<a role="button" class="btn btn-success btn-lg disabled" >'.$this->next_link.'</a>'.$this->next_tag_close;
 		}
 
 		// Render the "Last" link

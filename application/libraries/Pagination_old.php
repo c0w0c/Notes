@@ -1,6 +1,5 @@
 <?php
 /**
- * 測試中!!
  * CodeIgniter
  *
  * An open source application development framework for PHP
@@ -157,42 +156,42 @@ class CI_Pagination {
 	 * 頁碼全區標籤開始
 	 * @var	string
 	 */
-	protected $full_tag_open = '<nav class="text-center"><ul class="pagination pagination-lg">';
+	protected $full_tag_open = '<h1 class="text-center">';
 
 	/**
 	 * Full tag close
 	 * 頁碼全區標籤結束
 	 * @var	string
 	 */
-	protected $full_tag_close = '</ul></nav>';
+	protected $full_tag_close = '</h1>';
 
 	/**
 	 * First tag open
 	 * 第一頁標籤開始
 	 * @var	string
 	 */
-	protected $first_tag_open = '';
+	protected $first_tag_open = '<span>';
 
 	/**
 	 * First tag close
 	 * 第一頁標籤結束
 	 * @var	string
 	 */
-	protected $first_tag_close = '';
+	protected $first_tag_close = '</span>';
 
 	/**
 	 * Last tag open
 	 * 最後一頁標籤開始
 	 * @var	string
 	 */
-	protected $last_tag_open = '';
+	protected $last_tag_open = '<span>';
 
 	/**
 	 * Last tag close
 	 * 最後一頁標籤結束
 	 * @var	string
 	 */
-	protected $last_tag_close = '';
+	protected $last_tag_close = '</span>';
 
 	/**
 	 * First URL
@@ -208,56 +207,56 @@ class CI_Pagination {
 	 * 目前所在頁數字標籤開始
 	 * @var	string
 	 */
-	protected $cur_tag_open = '<li class="active"><span>';
+	protected $cur_tag_open = '<strong style="color:red;"> ';
 
 	/**
 	 * Current tag close
 	 * 目前所在頁數字標籤結束
 	 * @var	string
 	 */
-	protected $cur_tag_close = '</span></li>';
+	protected $cur_tag_close = '</strong>';
 
 	/**
 	 * Next tag open
 	 * 下一筆標籤開始
 	 * @var	string
 	 */
-	protected $next_tag_open = '<li>';
+	protected $next_tag_open = '<span> ';
 
 	/**
 	 * Next tag close
 	 * 下一筆標籤結束
 	 * @var	string
 	 */
-	protected $next_tag_close = '</li>';
+	protected $next_tag_close = '</span>';
 
 	/**
 	 * Previous tag open
 	 * 上一筆標籤開始
 	 * @var	string
 	 */
-	protected $prev_tag_open = '<li>';
+	protected $prev_tag_open = '<span>';
 
 	/**
 	 * Previous tag close
-	 * 上一筆標籤結束
+	 * 下一筆標籤結束
 	 * @var	string
 	 */
-	protected $prev_tag_close = '</li>';
+	protected $prev_tag_close = ' </span>';
 
 	/**
 	 * Number tag open
 	 * 頁碼數字標籤開始
 	 * @var	string
 	 */
-	protected $num_tag_open = '<li>';
+	protected $num_tag_open = '<strong> ';
 
 	/**
 	 * Number tag close
 	 * 頁碼數字標籤結束
 	 * @var	string
 	 */
-	protected $num_tag_close = '</li>';
+	protected $num_tag_close = '</strong>';
 
 	/**
 	 * Page query string flag
@@ -593,6 +592,11 @@ class CI_Pagination {
 
 		}
 
+		//自行新增部分讓上一頁永遠顯示
+		if ($this->prev_link !== FALSE && $this->cur_page === 1){
+			$output .=$this->prev_tag_open.$this->prev_link.$this->prev_tag_close;
+		}
+
 		// Render the pages
 		if ($this->display_pages !== FALSE)
 		{
@@ -635,6 +639,11 @@ class CI_Pagination {
 
 			$output .= $this->next_tag_open.'<a href="'.$base_url.$this->prefix.$i.$this->suffix.'"'.$attributes
 				.$this->_attr_rel('next').'>'.$this->next_link.'</a>'.$this->next_tag_close;
+		}
+
+		//自行新增讓下一頁永遠顯示
+		if ($this->next_link !== FALSE && $this->cur_page === $num_pages){
+			$output .= $this->next_tag_open.$this->next_link.$this->next_tag_close;
 		}
 
 		// Render the "Last" link

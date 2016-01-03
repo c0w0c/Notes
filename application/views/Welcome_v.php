@@ -75,9 +75,7 @@
         </div>
         <!-- /.row -->
         <!-- 分頁標籤 -->
-        <div class="container">
-            <?php echo $this->pagination->create_links(); ?>
-        </div>
+        <?php echo $this->pagination->create_links(); ?>
         <!-- /.分頁標籤 -->
         <hr>
         <!-- Footer -->

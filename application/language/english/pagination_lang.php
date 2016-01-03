@@ -1,5 +1,8 @@
 <?php
 /**
+ * 該分頁版本為自行修改配合bootstrap的按鈕群組
+ * 修改時間 2016/01/03
+ *
  * CodeIgniter
  *
  * An open source application development framework for PHP
@@ -37,7 +40,7 @@
  */
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-$lang['pagination_first_link'] = '';
+$lang['pagination_first_link'] = FALSE;
 $lang['pagination_next_link'] = '<i class="fa fa-arrow-circle-right"></i>';
 $lang['pagination_prev_link'] = '<i class="fa fa-arrow-circle-left"></i>';
-$lang['pagination_last_link'] = '';
+$lang['pagination_last_link'] = FALSE;
