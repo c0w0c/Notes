@@ -71,8 +71,8 @@
                 <h3 class="text-justify text-muted" style="margin-top: 0px;"><?=strip_tags(mb_substr($cont,1,35,"utf-8"))?>...</h3>
                 <!-- ./ -->
                     <div class="row">
-                        <div class="col-xs-8 col-sm-10 col-md-9"><h4><i class="fa fa-calendar"> : <?=$note_data[$i]->createdate?></i></h4></div>
-                        <div class="col-xs-4 col-sm-2 col-md-3"><h4><i class="fa fa-pencil-square-o"> : Shrhe</i></h4></div>
+                        <div class="col-xs-6 col-sm-6 col-md-6 text-left"><h4><i class="fa fa-calendar"> : <?=$note_data[$i]->createdate?></i></h4></div>
+                        <div class="col-xs-6 col-sm-6 col-md-6 text-right"><h4><i class="fa fa-pencil-square-o"> : Shrhe</i></h4></div>
                     </div>
             <a href="<?=$url_add.$note_data[$i]->note_id?>" class=" col-md-12 btn btn-<?=$class_color?> btn-lg btn-block">查看筆記</a>
             </div></div></div></div></div>
