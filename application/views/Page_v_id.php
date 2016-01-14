@@ -57,8 +57,16 @@
                     </div>
                 </div>
                 <!-- /.分享列表 -->
+
             </div>
         </div>
+        <!-- 上下則文章選項 -->
+        <div class="row">
+            <a <?=$pre_next_btn['pre_a_href']?> ><div class="pre_btn" <?=$pre_next_btn['pre_no_link']?> ><i class="fa fa-arrow-left"></i><?=$pre_next_btn['pre_title']?> </div></a>
+            <a <?=$pre_next_btn['next_a_href']?> ><div class="next_btn" <?=$pre_next_btn['next_no_link']?> ><?=$pre_next_btn['next_title']?> <i class="fa fa-arrow-right"></i></div></a>
+        </div>
+        <!-- /.上下則文章選項 -->
+        <br>
         <!-- 留言板 -->
         <div class="row">
             <div class="col-md-12 alert alert-success">

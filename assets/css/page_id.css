@@ -24,6 +24,26 @@ body {
     /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
 }
 
+a {
+    text-decoration: none;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:active {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
 .page-header {
     /*bs-page-header字體設定*/
     margin-top: 15px;
@@ -81,6 +101,45 @@ footer {
 
 .info_class {
     text-align: right;
+}
+
+.pre_btn {
+    width: 50%;
+    height: 100%;
+    background-color: #f0ad4e;
+    border: 2px #eb9214 solid;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    text-align: left;
+    float: left;
+    margin: 0px -3px 0px 0px;
+    padding: 5px;
+    //overflow: hidden;
+    //text-overflow: ellipsis;
+    //white-space: nowrap;
+    font-size: 26px;
+}
+
+.next_btn {
+    width: 50%;
+    height: 100%;
+    background-color: #f0ad4e;
+    border: 2px #eb9214 solid;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    text-align: right;
+    float: left;
+    margin: 0px -3px 0px 5px;
+    padding: 5px;
+    //overflow: hidden;
+    //text-overflow: ellipsis;
+    //white-space: nowrap;
+    font-size: 26px;
+}
+
+.pre_btn:hover,
+.next_btn:hover {
+    background-color: #ed9d2b;
 }
 
 
@@ -144,5 +203,18 @@ footer {
     }
     .info_class {
         text-align: left;
+    }
+    .pre_btn {
+        width: 100%;
+        margin: 5px 0px 5px 0px;
+        clear: left;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+    }
+    .next_btn {
+        width: 100%;
+        margin: 5px 0px 5px 0px;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
     }
 }

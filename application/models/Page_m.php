@@ -15,8 +15,16 @@ class Page_m extends CI_Model{
 		$q = $this->db->get('note_data');
 		return $q -> result();
 	}
+	//類別二 指定ID搜尋筆記上下筆資料清單
+	function note_id_select_pre_next($id){
+		$rang = "id = ".($id - 1)." or id = ".($id + 1);
+		$this->db->where($rang);
+		$this->db->select("id , note_id , note_title , note_class");
+		$q = $this->db->get('note_data');
+		return $q -> result();
+	}
 
-	//類別二 指定Tag標籤搜尋筆記清單資料
+	//類別三 指定Tag標籤搜尋筆記清單資料
 	function note_Tag_select($note_class){
 		$this->db->where("note_class",$note_class);
 		$this->db->select("*");
@@ -25,7 +33,7 @@ class Page_m extends CI_Model{
 		return $q -> result();
 	}
 
-	//類別三 指定字串搜尋筆記清單資料
+	//類別四 指定字串搜尋筆記清單資料
 	function note_Search_select($Search_str){
 		$this->db->like('note_title',$Search_str);			//搜尋標題
 		$this->db->or_like('note_contents',$Search_str);//開放可搜尋內容

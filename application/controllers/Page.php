@@ -8,12 +8,16 @@ class Page extends CI_Controller {
 		$this->load->model('Page_m');
 		//指定搜尋的筆記ID清單
 		$note_data = $this->Page_m->note_id_select($note_id);
-		//echo var_dump($note_data);
+
+		//設定上頁篇文章連結資料
+		include('pre_next_btn_set.php');
 
 		//抓取各類別文章數量
 		include('navbar_count.php');
 
-		$data = array('note_data' => $note_data ,'badge' => $badge,);
+		$data = array('note_data' => $note_data ,
+									'badge' => $badge,
+									'pre_next_btn' => $pre_next_btn,);
 		$this->load->view('Page_v_id', $data);
 
 	}
