@@ -38,6 +38,12 @@
                         //page編輯測試用頁
                         include('page_v_id_edit_con.php');
                     }else{
+                        if ($CI_example === true) {
+                            include('ci_example/EX-'.$note_data[0]->note_id.'.php'); ;
+                        }else{
+                            echo '<!-- NO CI_example-->';
+                        }
+
                         //內容字串處理
                         $cont = str_replace("|","",$note_data[0]->note_contents);
                         //$cont = str_replace("../../",base_url(),$cont);

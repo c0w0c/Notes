@@ -4,33 +4,36 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class C20150815001 extends CI_Controller {
 
-	//測試網址:http://localhost/CI/index.php/holle/index/123/321
 	function index(){
-		$name = "shrhe";				//進站人名
-		@$count = file_get_contents('./num.txt') ;
+		//指定文章ID
+		$note_id = "C20150815001";
+		//開啟資料庫連接
+		$this->load->model('Page_m');
+		//指定搜尋的筆記ID清單
+		$note_data = $this->Page_m->note_id_select($note_id);
+		//設定上頁篇文章連結資料
+		include('pre_next_btn_set.php');
+		//抓取各類別文章數量
+		include('navbar_count.php');
+
+		@$count = file_get_contents('./Counter.txt') ;
 		$count = $count ? $count : 0 ;
 		$count++;
 
-		$re = fopen('./num.txt', 'w');
+		$re = fopen('./Counter.txt', 'w');
 		fwrite($re, $count);
 		fclose($re);
 
 		$data = array(
-			'url' => base_url().'C20150815001' , 				//網頁URL
-			'title' => $name.'歡迎光臨!! Codeigniter練習' , //網頁抬頭
-			'header_t' => 'Codeigniter 練習',				//練習類別
-			'pre' => '網站訪問人數' ,						//練習題目
-			'c_date' => '2015/08/15' ,						//練習建立日期
-			'name' => $name ,
-			'count' => $count ,		 
+			'count' 				=> $count ,
+			'note_data' 		=> $note_data ,
+			'badge'					=> $badge,
+			'pre_next_btn' 	=> $pre_next_btn,
+			'CI_example'		=> true ,
 			);
 
+		$this->load->view('Page_v_id' , $data);
 
-
-		$this->load->view('bs3_t' , $data);
-		$this->load->view('visit');
-		$this->load->view('bs3_f');
 	}
-
 }
 ?>

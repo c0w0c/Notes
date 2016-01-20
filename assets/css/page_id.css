@@ -70,6 +70,7 @@ a:hover {
     /*con字體設定*/
     font-family: myfont;
     font-size: 24pt;
+    margin: 30px 0px 5px 0px;
 }
 
 .baner {
@@ -78,10 +79,34 @@ a:hover {
     background-color: #B2F0D1;
     border-top: 1px #339966 solid;
     border-bottom: 1px #339966 solid;
+    margin: 40px 0px 15px 0px;
 }
 
-i.fa-check-square-o {
+i.fa {
+    /*iconfont 字體設定*/
     font-weight: 900;
+}
+
+i.pre {
+    /*i的pre設定讓該段文字在小畫面時會出現轉軸*/
+    display: inline-block;
+    font: normal bold normal 16px/1 Consolas;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.panel-body-pre {
+    /*DIV設定讓該區域文字可向pre一樣，並在小畫面時會出現轉軸*/
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    white-space: pre;
+    display: inline-block;
+    font: normal bold normal 18px/1 Consolas;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 span {
@@ -95,15 +120,26 @@ footer {
     margin: 50px 0;
 }
 
+blockquote {
+    /*註釋設定*/
+    background: hsl(0, 0%, 97%);
+    color: #d9534f;
+    border-color: #FF8080;
+    font-size: 24px;
+    margin: -2px 0px 20px 0px;
+}
+
 .alert-danger {
     color: #a4660e;
 }
 
 .info_class {
+    /*類別資訊*/
     text-align: right;
 }
 
 .pre_btn {
+    /*上一頁按鈕*/
     width: 50%;
     height: 100%;
     background-color: #f0ad4e;
@@ -121,6 +157,7 @@ footer {
 }
 
 .next_btn {
+    /*下一頁按鈕*/
     width: 50%;
     height: 100%;
     background-color: #f0ad4e;
@@ -148,9 +185,11 @@ footer {
 @media screen and (min-width: 992px) {
     /*桌面*/
     .shareimg {
+        /*分享按鈕*/
         opacity: 0.5;
     }
     .shareimg:hover {
+        /*分享按鈕*/
         opacity: 1.0;
         -o-transition: opacity 0.5s;
         -webkit-transition: opacity 0.5s;
@@ -190,21 +229,21 @@ footer {
         margin-bottom: 50px;
         color: #B9B9B9;
     }
-    i.fa-check-square-o {
-        font-size: 16pt;
-    }
     footer > h4 {
         /*地板文字*/
         height: 0px;
         margin-top: -30px;
     }
     .baner > h3 {
-        font-size: 12pt;
+        /*標題*/
+        font-size: 14pt;
     }
     .info_class {
+        /*資訊類別*/
         text-align: left;
     }
     .pre_btn {
+        /*上一頁按鈕*/
         width: 100%;
         margin: 5px 0px 5px 0px;
         clear: left;
@@ -212,6 +251,7 @@ footer {
         border-bottom-right-radius: 5px;
     }
     .next_btn {
+        /*下一頁按鈕*/
         width: 100%;
         margin: 5px 0px 5px 0px;
         border-top-left-radius: 5px;
