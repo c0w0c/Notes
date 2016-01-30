@@ -84,9 +84,7 @@
     <?php endif ?>
         <hr>
         <!-- Footer -->
-        <footer>
-            <h4 class="text-center"><strong>Copyright © 2015 by Shrhe</strong></h4>
-        </footer>
+            <?php include('footer.php'); ?>
         <!-- /.Footer -->
     </div>
     <!-- /.container -->

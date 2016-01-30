@@ -79,10 +79,8 @@
         <!-- /.分頁標籤 -->
         <hr>
         <!-- Footer -->
-        <footer>
-            <h4 class="text-center"><strong>Copyright © 2015 by Shrhe</strong></h4>
+            <?php include('footer.php'); ?>
             <h6 class="text-center"><a href="Welcome/bk1">第一版</a> | <a href="Welcome/bk2">第二版</a></h6>
-        </footer>
         <!-- /.Footer -->
     </div>
     <!-- /.container -->

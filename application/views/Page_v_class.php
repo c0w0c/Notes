@@ -86,13 +86,9 @@
         </div>
         <hr>
         <!-- Footer -->
-        <footer>
-            <h4 class="text-center">
-                <strong>Copyright © 2015 by Shrhe</strong>
-            </h4>
-            <h6 class="text-center"><a href="<?=base_url().'Welcome/bk1'?>">第一版</a> | <a href="<?=base_url().'Welcome/bk2'?>">第二版</a></h6>
-        </footer>
+            <?php include('footer.php'); ?>
+            <h6 class="text-center"><a href="Welcome/bk1">第一版</a> | <a href="Welcome/bk2">第二版</a></h6>
+        <!-- /.Footer -->
     </div>
-    <!--container -->
 </body>
 </html>

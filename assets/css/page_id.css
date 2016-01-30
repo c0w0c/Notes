@@ -1,14 +1,5 @@
-/*!
- * Start Bootstrap - Modern Business HTML Template (http://startbootstrap.com)
- * Code licensed under the Apache License v2.0.
- * For details, see http://www.apache.org/licenses/LICENSE-2.0.
- */
-
-
-/* Global Styles */
-
 @font-face {
-    /*載入外部字體*/
+    /* 載入外部字體 */
     font-family: myfont;
     src: url(../fonts/wt014.ttf);
 }
@@ -21,8 +12,10 @@ body {
 body {
     background-color: #FFC2C2;
     padding-top: 65px;
-    /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
 }
+
+
+/* 連結文字樣式控制 */
 
 a {
     text-decoration: none;
@@ -45,14 +38,14 @@ a:hover {
 }
 
 .page-header {
-    /*bs-page-header字體設定*/
+    /* bs-page-header字體設定 */
     margin-top: 15px;
     font-family: myfont;
     font-size: 36pt;
 }
 
 .imgbox {
-    /*圖片盒設定*/
+    /* 圖片盒設定 */
     background-color: #F2F2F2;
     padding: 8px;
     border: 1px #339966 solid;
@@ -62,19 +55,19 @@ a:hover {
 }
 
 .full {
-    /*圖片全滿設定*/
+    /* 圖片全滿設定 */
     width: 100%;
 }
 
 .con {
-    /*con字體設定*/
+    /* con字體設定 */
     font-family: myfont;
     font-size: 24pt;
     margin: 30px 0px 5px 0px;
 }
 
 .baner {
-    /*本次重點標示設定*/
+    /* 本次重點標示設定 */
     padding: 10px 10px 10px 10px;
     background-color: #B2F0D1;
     border-top: 1px #339966 solid;
@@ -83,12 +76,12 @@ a:hover {
 }
 
 i.fa {
-    /*iconfont 字體設定*/
+    /* iconfont 字體設定 */
     font-weight: 900;
 }
 
 i.pre {
-    /*i的pre設定讓該段文字在小畫面時會出現轉軸*/
+    /* i的pre設定讓該段文字在小畫面時會出現轉軸 */
     display: inline-block;
     font: normal bold normal 16px/1 Consolas;
     text-rendering: auto;
@@ -97,7 +90,7 @@ i.pre {
 }
 
 .panel-body-pre {
-    /*DIV設定讓該區域文字可向pre一樣，並在小畫面時會出現轉軸*/
+    /* DIV設定讓該區域文字可向pre一樣，並在小畫面時會出現轉軸 */
     width: 100%;
     height: 100%;
     overflow: auto;
@@ -109,8 +102,13 @@ i.pre {
     -moz-osx-font-smoothing: grayscale;
 }
 
+.panel-code {
+    /* panel裡顯示code設定 */
+    padding: 0px;
+}
+
 span {
-    /*小註解字體設定*/
+    /* 小註解字體設定 */
     font-size: small;
     color: #d9534f;
 }
