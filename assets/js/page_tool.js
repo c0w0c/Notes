@@ -7,4 +7,5 @@ $(document).ready(function(){
 	$('.gist-file').css('border-top-left-radius','0px');
 	$('.gist-file').css('border-top-right-radius','0px');
 	$('.gist-meta').css('background-color','#F5F5F5');
+	$('.tab-size').css('tab-size','4');
 });

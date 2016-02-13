@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class C20150822002 extends CI_Controller {
 
-	function test(){
+	function index(){
 		//指定文章ID
 		$note_id = "C20150822002";
 		//開啟資料庫連接
@@ -16,85 +16,66 @@ class C20150822002 extends CI_Controller {
 		//抓取各類別文章數量
 		include('navbar_count.php');
 
+		//判斷JPG,PNG,GIF檔案是否存在，不存在則給予noimg。
+		$file_type = array(0 => 'jpg', 1 => 'png' , 2 => 'gif' );
+
+		for ($i=0; $i < count($file_type) ; $i++) {
+			if (is_file('assets/img/uploadfile/photo.'.$file_type[$i])) {
+				$img_file[$file_type[$i]] = 'photo.'.$file_type[$i];
+			}else{
+				$img_file[$file_type[$i]] = 'noimg.jpg';
+			}
+		}
+
+		//指定提示使用者變數
+		$label = '<h3 class="alert alert-info"><i class="fa fa-exclamation-triangle"></i> 僅可上傳格式為JPG、PNG、GIF且容量小於500kb以下的圖片。</h3>';
+
+		//判斷是否為上傳網頁，如是則執行上傳動作。
+		if (!empty($_POST["sub"])) {
+
+			$file = $_FILES["upfile"];
+
+			if ($file['size'] >= 60000){
+				$label = '<h3 class="alert alert-danger"><i class="fa fa-frown-o"></i> 抱歉，上傳失敗，僅可上傳容量小於50KB以下的圖片喔。</h3>' ;
+			}else{
+				switch ($file['type']) {
+					case 'image/jpeg':
+						$type = ".jpg";
+						break;
+					case 'image/gif':
+						$type = ".gif";
+						break;
+					case 'image/png':
+						$type = ".png";
+						break;
+					default:
+						$type = false ;
+						break;
+				}
+
+				//檢查變數$type的值是否存在
+				if($type){
+					//$time = time();
+					//move_uploaded_file($file['tmp_name'],"./assets/img/uploadfile/{$time}{$hz}"); 
+					//header('Location: '.base_url().'photo_upload/show/'.time.$hz);
+					//如使用變數方式增加檔案如要刪除則要使用 unlink('名稱位置'); 函數進行。
+					move_uploaded_file($file['tmp_name'],"./assets/img/uploadfile/photo{$type}");
+					header('Location: '.base_url().'C20150822002/test#thumbnail');
+				}else{
+					$label = '<h3 class="alert alert-danger"><i class="fa fa-frown-o"></i> 抱歉，上傳失敗，格式錯誤，請選擇正確的圖片格式。</h3>' ;
+				}
+			}
+		}
+
 		$data = array(
 			'note_data' 		=> $note_data ,
 			'badge'					=> $badge,
 			'pre_next_btn' 	=> $pre_next_btn,
 			'CI_example'		=> true ,
+			'img_file'			=> $img_file,
+			'label'					=> $label,
 			);
 
 		$this->load->view('Page_v_id' , $data);
-	}
-
-	function index(){
-		$data = array(
-			'url' => base_url().'C20150822002' , 					//網頁URL
-			'title' => 'ShrHe筆記 - Codeigniter 練習 - 團片上傳' , 	//網頁抬頭
-			'header_t' => 'Codeigniter 練習',						//練習類別
-			'pre' => '圖片上傳顯示' ,								//練習題目
-			'c_date' => '2015/08/22' ,								//練習建立日期
-		);
-
-		$this->load->view('bs3_t', $data);
-		$this->load->view('photo_uplaod_v');
-		$this->load->view('bs3_f');
-	}
-
-	function upload(){
-
-		if(!empty($_POST["sub"])){
-
-			$file = $_FILES["upfile"];
-
-			if ($file['size'] >= 500000){
-				echo "上傳檔案容量過大!!";
-			}else{
-				switch ($file['type']) {
-					case 'image/jpeg':
-						$hz = ".jpg";
-						break;
-					case 'image/gif':
-						$hz = ".gif";
-						break;	
-					case 'image/png':
-						$hz = ".png";
-						break;		
-					default:
-						$hz = false ;
-						break;
-				}
-
-				if($hz){
-					//$time = time();
-					//move_uploaded_file($file['tmp_name'],"./assets/img/uploadfile/{$time}{$hz}"); 
-					//header('Location: '.base_url().'photo_upload/show/'.time.$hz);
-					//如使用變數方式增加檔案如要刪除則要使用 unlink('名稱位置'); 函數進行。
-					move_uploaded_file($file['tmp_name'],"./assets/img/uploadfile/photo{$hz}");
-					header('Location: '.base_url().'C20150822002/show/photo'.$hz);
-				}else{
-					echo "上傳檔案格式錯誤，請更換正確圖片格式檔案。";
-				}
-			}
-		}
-
-	}
-
-	function show($photoname){
-
-		if (empty($photoname)){
-			$photoname = 'noimg.jpg';
-		} 
-
-		$data = array(
-			'url' => base_url().'C20150822002' , 					//網頁URL
-			'title' => 'ShrHe筆記 - Codeigniter 練習 - 團片上傳' , 	//網頁抬頭
-			'header_t' => 'Codeigniter 練習',						//練習類別
-			'pre' => '圖片顯示' ,									//練習題目
-			'c_date' => '2015/08/22' ,								//練習建立日期	 									//上傳的檔案名稱
-			'photoname' => $photoname ,
-		);	
-		$this->load->view('bs3_t', $data);
-		$this->load->view('photo_show_v');
-		$this->load->view('bs3_f');
 	}
 }
