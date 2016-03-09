@@ -2,62 +2,22 @@
 Shrhe 筆記
 ###################
 
-這是一個關於學習網頁程式設計的網站，紀錄著我在學習網頁設計的過程中所遇到的問題及解決方法，並紀錄一些自己覺得好用的工具及技術等相關文章
+這是一個關於學習網頁程式設計的網站，紀錄著我在學習網頁設計的過程中所遇到的問題及解決方法，並紀錄一些自己覺得好用的工具及技術等相關文章，這個網站是全部是自己一字一字刻出來的，已下是我使用的工具。
 
-*******************
-Release Information
-*******************
+前端
 
-This repo contains in-development code for future releases. To download the
-latest stable release please visit the `CodeIgniter Downloads
-<http://www.codeigniter.com/download>`_ page.
+*  HTML
+*  Javascript
+*  CSS3
+*  Bootstrap
 
-**************************
-Changelog and New Features
-**************************
+後端
 
-You can find a list of all changes for each release in the `user
-guide change log <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/changelog.rst>`_.
+*  PHP (Codeigniter)
+*  MySQL
 
-*******************
-Server Requirements
-*******************
+如文章覺得有問題或者有更好的方法想要一起分享討論，可在留言板留下您的回應。
 
-PHP version 5.4 or newer is recommended.
+---------------------
 
-It should work on 5.2.4 as well, but we strongly advise you NOT to run
-such old versions of PHP, because of potential security and performance
-issues, as well as missing features.
-
-************
-Installation
-************
-
-Please see the `installation section <http://www.codeigniter.com/user_guide/installation/index.html>`_
-of the CodeIgniter User Guide.
-
-*******
-License
-*******
-
-Please see the `license
-agreement <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/license.rst>`_.
-
-*********
-Resources
-*********
-
--  `User Guide <http://www.codeigniter.com/docs>`_
--  `Language File Translations <https://github.com/bcit-ci/codeigniter3-translations>`_
--  `Community Forums <http://forum.codeigniter.com/>`_
--  `Community Wiki <https://github.com/bcit-ci/CodeIgniter/wiki>`_
--  `Community IRC <http://www.codeigniter.com/irc>`_
-
-Report security issues to our `Security Panel <mailto:security@codeigniter.com>`_, thank you.
-
-***************
-Acknowledgement
-***************
-
-The CodeIgniter team would like to thank EllisLab, all the
-contributors to the CodeIgniter project and you, the CodeIgniter user.
+目前本人正在努力尋找**後端工程師**的工作，如果您看了網站，覺得本人的能力符合您的需求，也可以留言給我。
