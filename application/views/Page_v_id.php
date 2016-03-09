@@ -53,7 +53,6 @@
                 </div>
                 <!-- /.文章內容-->
                 <!-- 分享列表 -->
-                <br>
                 <hr>
                 <div class="row">
                     <div class="col-md-12 col-xs-12">

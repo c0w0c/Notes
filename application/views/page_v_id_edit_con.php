@@ -1,1 +1,110 @@
-<div class="con" style="margin:15px 0px 15px 0px;">　|開始要製作NavBar按鈕時，想說按鈕只有純文字好像少點甚麼，如果加上小icon<span>(圖一)</span>因該可以讓使用者更直覺點選。</div><div class="row"><div class="col-md-6 col-sm-6"><div style="background-image: url(assets/img/index/C20151026005.png);width:100%;height:194px;background-repeat: no-repeat;background-position: center;"></div><h4 class="text-danger text-center">(圖一)</h4></div><div class="col-md-6 col-sm-6"><div style="background-image: url(https://www.google.com.tw/images/nav_logo231.png);width:100%;height:194px;background-repeat: no-repeat;background-position: top center;"></div><h4 class="text-danger text-center">(圖二)</h4></div></div><div class="con" style="margin:15px 0px 15px 0px;">　原本想使用最基本的 <code>&lt;Img&gt;</code> 來做就好，後來想起有次在抓google得Icon時發現，它所使用的圖示<span>(圖二)</span>是全部放在同一張圖檔上面(驚)。</div><div class="con" style="margin:15px 0px 15px 0px;">　這太神奇了，全部的圖示都在一張圖片上那它是怎麼讓每個圖示，各別獨立顯示出來的呢?當時心裡產生了這個問號，於是在谷哥大神的協助下找到了"CSS Sprite"。</div><div class="con" style="margin:15px 0px 15px 0px;">　這項技術有啥好處呢?根據<a href="http://blog.miniasp.com/post/2008/12/13/CSS-Spriting-without-using-background-image.aspx" target="_new">IT神人will保哥</a>blog文章內容表示，在圖片大小條件相同的情況下，如果整頁的背景圖原本有30張就會有30個HTTP Request，但全部合在一張圖片後就只需要一個HTTP Request而已，還可以透過HTTP Cache技巧將圖片快取在瀏覽器中。所以使用CSS prite可以加速網頁載入與顯示的速度提昇網站效能。</div> <div class="con" style="margin:15px 0px 15px 0px;">　閱讀文章了解後，基本上是使用CSS的 <code>.background-image</code> 跟 <code>.background-position</code> 來完成這項技術，簡單來說就是在使用同一張圖片，但是使用不同的定位點來抓取片段的圖像的方法，感覺實作起來非常耗時，但還好已經有網站提供編輯器，只要準備好圖片上傳，就會自動合併圖片並將語法及定位點幫我們寫好，可以直接拿來使用。</div><div class="con baner" style="margin:40px 0px 15px 0px;"><h2><i class="fa fa-bookmark"></i>   CSS Sprite 實作</h2><h3>網站名稱：CSS Sprite Generator</h3><h3>網站位址：http://spritegen.website-performance.org/</h3><a target="_blank" href="" class="btn btn-primary btn-lg btn-block" role="button">點我連結</a></div><i class="fa fa-check-square-o" style="margin-top: 30px;"> 1.開啟CSS Sprite網站編輯器</i><div class="imgbox"><img src="assets/img/contents/C20151026005-1.png" class="img-responsive full" alt="Image"><h4 class="text-center">▲點選連結後網站的首頁</h4></div><i class="fa fa-check-square-o"> 2.點選Clear清除預設的圖示</i><div class="imgbox"><img src="assets/img/contents/C20151026005-2.png" class="img-responsive full" alt="Image"><h4 class="text-center">▲清除前</h4><hr><img src="assets/img/contents/C20151026005-3.png" class="img-responsive full" alt="Image"><h4 class="text-center">▲清除後</h4></div><i class="fa fa-check-square-o"> 3.點選Open上傳要合併的圖示</i><div class="imgbox"><img src="assets/img/contents/C20151026005-4.png" class="img-responsive full" alt="Image"></div><i class="fa fa-check-square-o"> 4.點選Settings進行相關設定</i><div class="imgbox"><img src="assets/img/contents/C20151026005-5.png" class="img-responsive full" alt="Image"></div><i class="fa fa-check-square-o"> 5.依照需求設定格式後儲存</i><div class="imgbox"><img src="assets/img/contents/C20151026005-6.png" class="img-responsive full" alt="Image"><h4 class="text-center">▲其中Style prefix是class要設的名稱，請設定自己要用的名稱。</h4></div><i class="fa fa-check-square-o"> 6.查看合併完成的圖片、程式碼。</i><div class="imgbox"><img src="assets/img/contents/C20151026005-7.png" class="img-responsive full" alt="Image"><hr><img src="assets/img/contents/C20151026005-8.png" class="img-responsive full" alt="Image"><h4 class="text-center">▲PNG圖片</h4><hr><img src="assets/img/contents/C20151026005-9.png" class="img-responsive full" alt="Image"><h4 class="text-center">▲CSS的程式碼</h4><hr><img src="assets/img/contents/C20151026005-10.png" class="img-responsive full" alt="Image"><h4 class="text-center">▲HTML要使用的標籤語法</h4></div><i class="fa fa-check-square-o"> 7.在程式碼裡面加入標籤語法，完成。</i><div class="imgbox"><img src="assets/img/contents/C20151026005-11.png" class="img-responsive full" alt="Image"><h4 class="text-center">▲可以開啟網頁預覽結果囉</h4></div><hr><div class="con" style="margin:30px 0px 15px 0px;">　根據實作結果，有些的定位會稍微跑掉，所以需要在CSS的 <code>.background-position</code> 裡稍做調整，基本上沒甚麼大問題，但這個方法仍然有些瀏覽器不支援(詳細情形請詳閱<a href="http://blog.miniasp.com/post/2008/12/13/CSS-Spriting-without-using-background-image.aspx" target="_new">Will保哥的blog</a>)，而且這方法雖然可以提昇網站的效能，但是在製作跟後續維護上會比原先直接使用ImgTag方法更耗時間，所以各有利弊，在此留下筆記提醒自己。</div><hr><div class="row"><div class="col-md-12 col-sm-12">CSS Sprite相關文章:</div><div class="col-md-3 col-sm-3"><a href="http://www.minwt.com/webdesign-dev/css/11111.html" target="_blank">梅問題教學網</a></div><div class="col-md-6 col-sm-6"><a href="http://blog.winwu.today/2012/06/css-sprites.html" target="_blank">一些平鋪直敘技術相關文</a></div><div class="col-md-3 col-sm-3"><a href="http://blog.miniasp.com/post/2008/12/13/CSS-Spriting-without-using-background-image.aspx" target="_blank">Will 保哥</a></div></div>
+<H2>範例:</H2>
+<form action="" method="post" enctype="multipart/form-data" class="alert alert-warning">
+	<?=$label?>
+  <input type="file" name="upfile" style="margin-bottom: 10px;">
+	<a name="thumbnail"></a>
+  <input type="submit" class="btn btn-success btn-lg btn-block" name="sub" value="上傳圖片">
+</form>
+<div class="row">
+  <div class="col-sm-4 col-md-4">
+    <a class="thumbnail">
+      <img src="assets/img/uploadfile/photo.jpg" alt="jpg格式圖片">
+      <div class="caption">
+    		<h3 class="text-center">jpg格式圖片</h3>
+      </div>
+    </a>
+  </div>
+  <div class="col-sm-4 col-md-4">
+    <a class="thumbnail">
+      <img src="assets/img/uploadfile/photo.png" alt="png格式圖片">
+      <div class="caption">
+    		<h3 class="text-center">png格式圖片</h3>
+      </div>
+    </a>
+  </div>
+  <div class="col-sm-4 col-md-4">
+    <a class="thumbnail">
+      <img src="assets/img/uploadfile/photo.gif" alt="gif格式圖片">
+      <div class="caption">
+    		<h3 class="text-center">gif格式圖片</h3>
+      </div>
+    </a>
+  </div>
+</div>
+<hr>
+<div class="con">本次練習在CI中運用POST上傳圖片後於網頁中顯示圖片，並且可以限制上傳圖片的格式及檔案大小。如果掌握好該圖片上傳的運用，可以運用的層級非常廣闊，是一個非常實用的技術。</div>
+<div class="baner">
+	<h2><i class="fa fa-bookmark"></i> 圖片上傳實作</h2>
+	<h3>於網頁載入時判斷該圖檔案是否存在，如不存在則用替代圖片顯示，上傳圖片時限制該格式須為JPG、PNG、GIF，並且需小於50KB的圖片檔案，上傳完畢後顯示新圖片。</h3>
+</div>
+<div class=con>1. 首先須建立二個必要的檔案分別為控制器的upload_photo.php、視圖的upload_photo_v.php。</div>
+<blockquote> <i class="fa fa-file-code-o"></i> upload_photo.php<pre><i class=pre>'專案'/application/controllers/upload_photo.php</i></pre> <i class="fa fa-file-code-o"></i> upload_photo_v.php<pre><i class=pre>'專案'/application/views/upload_photo_v.php</i></pre> </blockquote>
+<div class=con>2. 上傳圖片必須使用到Form表單，所以我們先從使用者介面開始做起，開啟編輯upload_photo_v.php檔案，寫入<abbr title=HTML標籤:表單 data-toggle=tooltip>&lt;Form&gt;</abbr>標籤語法。</div>
+<div class="panel panel-default">
+    <div class=panel-heading style="font-size: 22px;color: #d9534f;"><i class="fa fa-pencil"></i> 表單標籤參數設定</div>
+    <div class="panel-body panel-code">
+        <script src=https://gist.github.com/tsau-shrhe/bd6a36bfcc9bb0e3007a.js?file=Upload_photo_v-01.php></script>
+    </div>
+</div>
+<blockquote> <i class="fa fa-exclamation-triangle"></i> 使用Form傳送圖片必須使用post方法並編碼必須為multipart/form-data，否則會傳送失敗。 </blockquote>
+<div class=con>3. 接著在表單下面寫入要顯示圖片的標籤<abbr title=HTML標籤:圖片 data-toggle=tooltip>&lt;img&gt;</abbr>，這樣我們視圖的部分就完成了。</div>
+<div class="panel panel-default">
+    <div class=panel-heading style="font-size: 22px;color: #d9534f;"><i class="fa fa-pencil"></i> 圖片標籤參數設定</div>
+    <div class="panel-body panel-code">
+        <script src=https://gist.github.com/tsau-shrhe/bd6a36bfcc9bb0e3007a.js?file=Upload_photo_v-02.php></script>
+    </div>
+</div>
+<div class="panel panel-default">
+    <div class=panel-heading style="font-size: 22px;color: #d9534f;"><i class="fa fa-file-code-o"></i> upload_photo_v.php(完成)</div>
+    <div class="panel-body panel-code">
+        <script src=https://gist.github.com/tsau-shrhe/bd6a36bfcc9bb0e3007a.js?file=Upload_photo_v.php></script>
+    </div>
+</div>
+<div class=con>4. 完成了視圖部分，開始動手寫控制器，控制器我們共分成四個階段來編寫程式碼，第一階段就是建立類別及功能。</div>
+<div class="panel panel-default">
+    <div class=panel-heading style="font-size: 22px;color: #d9534f;"><i class="fa fa-pencil"></i> 建立類別及功能</div>
+    <div class="panel-body panel-code">
+        <script src=https://gist.github.com/tsau-shrhe/bd6a36bfcc9bb0e3007a.js?file=Upload_photo-01.php></script>
+    </div>
+</div>
+<blockquote> <i class="fa fa-exclamation-triangle"></i> 檔名與class名需相同並首字都需大寫。否則容易產生錯誤!! </blockquote>
+<div class=con>5. 第二階段我們要使用PHP函數<abbr title=PHP函數:判斷該路徑檔案是否存在 data-toggle=tooltip>&lt;is_file&gt;</abbr>判斷網頁要顯示的圖片檔案是否存在，如果存在就將檔案名稱指定給變數<abbr title="如 : photo.jpg" data-toggle=tooltip>$img_file</abbr>，如果檔案不存在就指定為noimg.jpg。</div>
+<div class="panel panel-default">
+    <div class=panel-heading style="font-size: 22px;color: #d9534f;"><i class="fa fa-pencil"></i> 判斷檔案並指定檔案名稱</div>
+    <div class="panel-body panel-code">
+        <script src=https://gist.github.com/tsau-shrhe/bd6a36bfcc9bb0e3007a.js?file=Upload_photo-02.php></script>
+    </div>
+</div>
+<div class=con>6. 第三階段先指定給使用者的提示文字並檢查$_POST["sub"]是否為空值，如不為空值則代表該網頁已經是經由POST傳送的網頁，則使用$_FILES[""]上傳檔案，於上傳檔案時檢查檔案大小及檔案格式，如不符合規定則顯示錯誤訊息並不執行複寫的指令，如都符合規定則執行複寫檔案及重新導向網頁。</div>
+<div class="panel panel-default">
+    <div class=panel-heading style="font-size: 22px;color: #d9534f;"><i class="fa fa-pencil"></i> 判斷圖片檔案及上傳</div>
+    <div class="panel-body panel-code">
+        <script src=https://gist.github.com/tsau-shrhe/bd6a36bfcc9bb0e3007a.js?file=Upload_photo-03.php></script>
+    </div>
+</div>
+<div class=con>7. 最後階段建立$data的陣列，並將變數$img_file及$label的資料加入陣列中，並使用load view方法載入視圖，這樣控制器的程式碼就完成囉。</div>
+<div class="panel panel-default">
+    <div class=panel-heading style="font-size: 22px;color: #d9534f;"><i class="fa fa-pencil"></i> 陣列寫入及調用視圖</div>
+    <div class="panel-body panel-code">
+        <script src=https://gist.github.com/tsau-shrhe/bd6a36bfcc9bb0e3007a.js?file=Upload_photo-04.php></script>
+    </div>
+</div>
+<div class="panel panel-default">
+    <div class=panel-heading style="font-size: 22px;color: #d9534f;"><i class="fa fa-pencil"></i> Upload_photo.php(完成)</div>
+    <div class="panel-body panel-code">
+        <script src=https://gist.github.com/tsau-shrhe/bd6a36bfcc9bb0e3007a.js?file=Upload_photo.php></script>
+    </div>
+</div>
+<div class=con>以上就完成了本次的實作，目前只學到基本的圖片上傳功能，還有更多的檔案上傳及使用技術還要在更加精進學習。</div>
+<hr>
+<div class="panel panel-info">
+	<div class="panel-heading text-center"><h3>本次學習重點</h3></div>
+		<div class=panel-body>
+			<i class="fa fa-check-square-o"> 取得上傳檔案內容 :</i><pre><i class=pre>$file = $_FILES["upfile"];</i></pre>
+			<i class="fa fa-check-square-o"> 取得上傳檔案容量 :</i><pre><i class=pre>$file['size']</i></pre>
+			<i class="fa fa-check-square-o"> 取得上傳檔案格式 :</i><pre><i class=pre>$file['type']</i></pre>
+			<i class="fa fa-check-square-o"> 取得上傳檔案暫存檔名 :</i><pre><i class=pre>$file['tmp_name']</i></pre>
+			<i class="fa fa-check-square-o"> 移動上傳檔案函數 : </i><pre><i class=pre>move_uploaded_file ('檔案名稱','檔案新位置');</i></pre>
+			<i class="fa fa-check-square-o"> 刪除上傳檔案函數 :</i><pre><i class=pre>unlink('檔案名稱位置'); EX: 'Test/file.txt'</i></pre>
+		</div>
+</div>

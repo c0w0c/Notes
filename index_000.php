@@ -1,5 +1,8 @@
 <?php
 /**
+ * 該首頁檔案版本為上線版本
+ * 因要安全性問題將 display_errors 錯誤訊息顯示設定為 0 (不顯示)
+ *
  * CodeIgniter
  *
  * An open source application development framework for PHP

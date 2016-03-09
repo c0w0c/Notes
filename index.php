@@ -1,5 +1,8 @@
 <?php
 /**
+ * 該首頁檔案版本為工作版本
+ * 因要debug容易將 display_errors 錯誤訊息顯示設定為 1 (顯示錯誤訊息)
+ *
  * CodeIgniter
  *
  * An open source application development framework for PHP
