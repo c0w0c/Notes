@@ -50,9 +50,7 @@
         <hr>
         <!-- Footer -->
         <footer>
-            <h4 class="text-center">
-                <strong>Copyright © 2015 by Shrhe</strong>
-            </h4>
+            <?php include('footer.php'); ?>
         </footer>
     </div>
     <!-- /.container -->
