@@ -16,7 +16,7 @@
 
 如文章覺得有問題或者有更好的方法想要一起分享討論，可在留言板留下您的回應。
 
-網站連結: [ShrHe 筆記](http://shrhe-web.host56.com/Notes/)
+網站連結: [ShrHe 筆記](http://shrhe.host56.com/Notes/)
 
 ---------------------
 
